@@ -1,8 +1,7 @@
-export interface RoleProgression {
-  role: string;
+export interface RoleEntry {
+  title: string;
   period: string;
-  description?: string;
-  current?: boolean;
+  description: string;
 }
 
 export interface ExperienceEntry {
@@ -10,7 +9,7 @@ export interface ExperienceEntry {
   title: string;
   organization: string;
   description: string;
-  roles?: RoleProgression[];
+  roles?: RoleEntry[];
 }
 
 export const experiences: ExperienceEntry[] = [
@@ -46,19 +45,19 @@ export const experiences: ExperienceEntry[] = [
     year: "2024–2026",
     title: "Developer Group @ NUS Computing",
     organization: "Developer Group @ NUS Computing",
-    description:
-      "Contributing to a student-led tech community with 2,300+ followers.",
+    description: "",
     roles: [
       {
-        role: "Head of Technology",
+        title: "Head of Technology",
         period: "2025 – 2026",
         description:
           "Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",
-        current: true,
       },
       {
-        role: "Technology Associate",
+        title: "Technology Associate",
         period: "2024 – 2025",
+        description:
+          "Contributed to a student-led tech community with 2,300+ followers.",
       },
     ],
   },

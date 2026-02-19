@@ -80,7 +80,7 @@ export default function ProjectCard({
               delay: 0.1,
               ease: [0.25, 0.1, 0, 1],
             }}
-            className="flex flex-1 flex-col justify-center gap-7 lg:max-w-[40%]"
+            className="flex flex-1 flex-col justify-center gap-7 lg:max-w-[50%]"
           >
             {/* Logo + Title */}
             <div className="flex items-center gap-5">
@@ -157,7 +157,7 @@ export default function ProjectCard({
               delay: 0.25,
               ease: [0.25, 0.1, 0, 1],
             }}
-            className="flex-1 lg:max-w-[60%] flex items-center"
+            className="flex-1 lg:max-w-[50%] flex items-center"
           >
             <div className="group/img w-full">
               <div

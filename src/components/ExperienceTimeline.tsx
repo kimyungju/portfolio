@@ -1,55 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExperienceEntry, RoleProgression } from "@/data/experience";
+import { ExperienceEntry, RoleEntry } from "@/data/experience";
 
-function RoleProgressionTimeline({ roles }: { roles: RoleProgression[] }) {
+function RoleTimeline({ roles }: { roles: RoleEntry[] }) {
   return (
-    <div className="relative mt-4 ml-1.5">
-      {/* Continuous vertical line connecting all dots */}
-      <div className="absolute left-0 top-[7px] bottom-[7px] w-px bg-white/10" />
+    <div className="relative mt-3 ml-1">
+      {/* Vertical connecting line */}
+      <div className="absolute left-[4px] top-[10px] bottom-[10px] w-px bg-white/10" />
 
       {roles.map((role, i) => (
         <div
-          key={role.role}
-          className={`relative flex gap-3 ${i < roles.length - 1 ? "pb-5" : ""}`}
+          key={role.title}
+          className={`relative flex items-start gap-3 ${i < roles.length - 1 ? "pb-4" : ""}`}
         >
-          {/* Dot — centered on the vertical line */}
-          <div
-            className={`relative z-10 mt-1.5 h-3 w-3 shrink-0 -ml-[5px] rounded-full ${
-              role.current
-                ? "bg-cyan shadow-[0_0_8px_rgba(34,211,238,0.5)]"
-                : "border border-white/20 bg-secondary"
-            }`}
-          />
-
-          {/* Role content */}
+          <div className="relative z-10 mt-[6px] h-[9px] w-[9px] shrink-0 rounded-full border border-white/20 bg-secondary" />
           <div>
-            <div className="flex items-baseline gap-3">
-              <span
-                className={`text-lg font-600 md:text-xl ${
-                  role.current ? "text-primary" : "text-text-muted/50"
-                }`}
-              >
-                {role.role}
+            <div className="flex items-baseline gap-2">
+              <span className="text-base font-600 text-primary/90 md:text-lg">
+                {role.title}
               </span>
-              <span
-                className={`whitespace-nowrap font-mono text-sm tracking-wide ${
-                  role.current ? "text-text-muted/70" : "text-text-muted/30"
-                }`}
-              >
+              <span className="whitespace-nowrap font-mono text-xs tracking-wide text-text-muted/50">
                 {role.period}
               </span>
             </div>
-            {role.description && (
-              <p
-                className={`mt-1 max-w-xl text-base leading-[1.7] ${
-                  role.current ? "text-text-muted" : "text-text-muted/40"
-                }`}
-              >
-                {role.description}
-              </p>
-            )}
+            <p className="mt-1 max-w-xl text-base leading-[1.7] text-text-muted">
+              {role.description}
+            </p>
           </div>
         </div>
       ))}
@@ -84,14 +61,12 @@ export default function ExperienceTimeline({
               </span>
             </div>
 
-            {/* Dot on timeline — hidden for role-progression entries */}
-            {!entry.roles && (
-              <div className="relative flex shrink-0 items-start pt-2">
-                <div className="relative z-10 h-2.5 w-2.5 rounded-full border border-white/20 bg-secondary transition-colors duration-300 group-hover:border-accent group-hover:bg-accent/20">
-                  <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
+            {/* Dot on timeline */}
+            <div className="relative flex shrink-0 items-start pt-2">
+              <div className="relative z-10 h-2.5 w-2.5 rounded-full border border-white/20 bg-secondary transition-colors duration-300 group-hover:border-accent group-hover:bg-accent/20">
+                <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100" />
               </div>
-            )}
+            </div>
 
             {/* Content */}
             <div className="pb-2">
@@ -100,7 +75,7 @@ export default function ExperienceTimeline({
                   <h3 className="font-display text-xl font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-2xl">
                     {entry.organization}
                   </h3>
-                  <RoleProgressionTimeline roles={entry.roles} />
+                  <RoleTimeline roles={entry.roles} />
                 </>
               ) : (
                 <>
