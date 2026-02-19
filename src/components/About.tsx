@@ -48,11 +48,11 @@ export default function About() {
           >
             <div className="relative overflow-hidden rounded-2xl border border-white/[0.06]">
               <Image
-                src="/profile.svg"
+                src="/profile.jpg"
                 alt="Yungju Kim"
                 width={380}
                 height={380}
-                className="transition-transform duration-700 hover:scale-[1.03]"
+                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
             </div>
@@ -66,7 +66,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-5"
           >
-            <p className="text-[15px] leading-[1.8] text-text-muted">
+            <p className="text-lg leading-[1.85] text-text-muted">
               I&apos;m Yungju, an undergraduate Computer Science student at the{" "}
               <strong className="font-semibold text-primary">
                 National University of Singapore
@@ -79,25 +79,30 @@ export default function About() {
               .
             </p>
 
-            <p className="text-[15px] leading-[1.8] text-text-muted">
+            <p className="text-lg leading-[1.85] text-text-muted">
               I focus on building{" "}
               <strong className="font-semibold text-primary">
                 AI-powered full-stack applications
               </strong>{" "}
-              &mdash; from autonomous agents to real-time platforms &mdash;
-              using tools like Next.js, Python, and OpenAI. Most of my projects
-              start from a simple question: how can technology make this easier?
+              , from autonomous agents to real-time platforms, using tools like
+              Next.js, Python, and OpenAI. Most of my projects start from a
+              simple question: how can technology make this easier?
             </p>
 
-            <p className="text-[15px] leading-[1.8] text-text-muted">
+            <p className="text-lg leading-[1.85] text-text-muted">
               Fluent in{" "}
               <strong className="font-semibold text-primary">
                 English and Korean
               </strong>
               , I bring an international perspective from growing up in Kuala
-              Lumpur and studying in Singapore. When I&apos;m not coding,
-              I&apos;m contributing to the developer community at NUS as Head of
-              Technology at Developer Group.
+              Lumpur and studying in Singapore. Beyond full-stack development,
+              I&apos;m drawn to{" "}
+              <strong className="font-semibold text-primary">
+                software engineering and cybersecurity
+              </strong>
+              , aiming to build systems that are both powerful and secure.
+              When I&apos;m not coding, I&apos;m contributing to the developer
+              community at NUS as Head of Technology at Developer Group.
             </p>
 
             <div className="pt-4">

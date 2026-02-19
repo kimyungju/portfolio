@@ -11,9 +11,9 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <About />
       <Projects />
       <Experience />
-      <About />
       <Footer />
       <SocialBar />
     </main>

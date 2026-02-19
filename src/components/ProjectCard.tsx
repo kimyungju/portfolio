@@ -148,34 +148,36 @@ export default function ProjectCard({
               {/* Bottom shadow ledge */}
               <div className="mx-auto w-[70%] h-1 rounded-b-xl bg-[#2a2b32] opacity-60" />
 
-              {/* Phone mockup — overlaps laptop at bottom-right */}
-              <div
-                className="absolute -bottom-4 -right-4 z-10 hidden lg:block"
-                style={{
-                  width: "28%",
-                  filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.6))",
-                }}
-              >
-                <div className="rounded-[20px] bg-[#1e1f26] p-1.5 ring-1 ring-white/[0.06]">
-                  {/* Dynamic Island */}
-                  <div className="flex items-center justify-center px-4 pt-2 pb-1">
-                    <div className="h-3 w-14 rounded-full bg-[#0a0a0a]" />
-                  </div>
-                  {/* Phone screen */}
-                  <div className="relative overflow-hidden rounded-[14px] bg-black aspect-[9/19.5]">
-                    <Image
-                      src={project.mobileSrc ?? project.previewSrc}
-                      alt={`${project.title} mobile preview`}
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  {/* Home indicator */}
-                  <div className="flex justify-center py-2">
-                    <div className="h-1 w-10 rounded-full bg-[#3a3b42]" />
+              {/* Phone mockup — only shown when a mobile screenshot exists */}
+              {project.mobileSrc && (
+                <div
+                  className="absolute -bottom-4 -right-4 z-10 hidden lg:block"
+                  style={{
+                    width: "28%",
+                    filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.6))",
+                  }}
+                >
+                  <div className="rounded-[20px] bg-[#1e1f26] p-1.5 ring-1 ring-white/[0.06]">
+                    {/* Dynamic Island */}
+                    <div className="flex items-center justify-center px-4 pt-2 pb-1">
+                      <div className="h-3 w-14 rounded-full bg-[#0a0a0a]" />
+                    </div>
+                    {/* Phone screen */}
+                    <div className="relative overflow-hidden rounded-[14px] bg-black aspect-[9/19.5]">
+                      <Image
+                        src={project.mobileSrc}
+                        alt={`${project.title} mobile preview`}
+                        fill
+                        className="object-cover object-top"
+                      />
+                    </div>
+                    {/* Home indicator */}
+                    <div className="flex justify-center py-2">
+                      <div className="h-1 w-10 rounded-full bg-[#3a3b42]" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
