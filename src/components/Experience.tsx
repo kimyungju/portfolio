@@ -39,8 +39,16 @@ export default function Experience() {
           className="mt-6 mb-16 h-px w-full max-w-xs origin-left bg-gradient-to-r from-cyan via-purple/40 to-transparent"
         />
 
-        <ExperienceTimeline entries={experiences} />
-        <ImageCarousel />
+        <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+          <div className="flex-1 min-w-0">
+            <ExperienceTimeline entries={experiences} />
+          </div>
+          <div className="lg:w-[420px] lg:shrink-0">
+            <div className="lg:sticky lg:top-32">
+              <ImageCarousel />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

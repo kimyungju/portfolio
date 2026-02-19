@@ -27,7 +27,7 @@ export default function ImageCarousel() {
   }, [current, next]);
 
   return (
-    <div className="relative mt-12 mx-auto max-w-lg sm:max-w-xl">
+    <div className="relative mx-auto max-w-xl sm:max-w-2xl">
       {/* Image container */}
       <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-card-bg">
         <div
@@ -39,8 +39,8 @@ export default function ImageCarousel() {
               <Image
                 src={src}
                 alt={`Experience photo ${i + 1}`}
-                width={640}
-                height={480}
+                width={800}
+                height={600}
                 className="w-full"
               />
             </div>
