@@ -1,53 +1,105 @@
+"use client";
+
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { socials } from "@/data/socials";
+
+const contactLinks = [
+  {
+    href: `mailto:${socials.email}`,
+    icon: <HiOutlineMail size={18} />,
+    label: socials.email,
+  },
+  {
+    href: `tel:${socials.phone}`,
+    icon: <HiOutlinePhone size={18} />,
+    label: socials.phone,
+  },
+  {
+    href: socials.linkedin,
+    icon: <FaLinkedin size={18} />,
+    label: "LinkedIn",
+    external: true,
+  },
+  {
+    href: socials.github,
+    icon: <FaGithub size={18} />,
+    label: "GitHub",
+    external: true,
+  },
+];
 
 export default function Footer() {
   return (
-    <section id="contact" className="px-8 md:px-16 lg:px-24 py-24">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8">Get In Touch</h2>
-
-      <div className="flex flex-col sm:flex-row flex-wrap gap-6 mb-16">
-        <a
-          href={`mailto:${socials.email}`}
-          className="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
-        >
-          <HiOutlineMail size={20} />
-          {socials.email}
-        </a>
-
-        <a
-          href={`tel:${socials.phone}`}
-          className="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
-        >
-          <HiOutlinePhone size={20} />
-          {socials.phone}
-        </a>
-
-        <a
-          href={socials.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
-        >
-          <FaLinkedin size={20} />
-          LinkedIn
-        </a>
-
-        <a
-          href={socials.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
-        >
-          <FaGithub size={20} />
-          GitHub
-        </a>
+    <footer id="contact" className="relative px-8 pb-12 pt-32 md:px-16 lg:px-24">
+      {/* Top divider */}
+      <div className="mx-auto mb-20 max-w-6xl">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       </div>
 
-      <div className="border-t border-white/10 pt-8 text-sm text-text-muted">
-        &copy; 2026 Kim Yungju. All rights reserved.
+      <div className="mx-auto max-w-6xl">
+        {/* Section header */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-text-muted/60"
+        >
+          CONTACT
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-display text-4xl font-700 tracking-[-0.02em] md:text-5xl"
+        >
+          Get In Touch
+        </motion.h2>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-6 mb-12 h-px w-full max-w-xs origin-left bg-gradient-to-r from-white/15 to-transparent"
+        />
+
+        {/* Contact links */}
+        <div className="mb-20 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+          {contactLinks.map((link, i) => (
+            <motion.a
+              key={link.label}
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
+              className="group flex items-center gap-3 rounded-xl border border-white/[0.04] bg-white/[0.01] px-4 py-4 transition-all duration-300 hover:border-white/[0.08] hover:bg-white/[0.03]"
+            >
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.04] text-text-muted transition-colors duration-300 group-hover:text-primary">
+                {link.icon}
+              </span>
+              <span className="text-[13px] font-medium text-text-muted transition-colors duration-300 group-hover:text-primary">
+                {link.label}
+              </span>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Copyright */}
+        <div className="flex items-center justify-between border-t border-white/[0.04] pt-8">
+          <p className="text-[12px] tracking-wider text-text-muted/40">
+            &copy; 2026 Kim Yungju
+          </p>
+          <p className="text-[12px] tracking-wider text-text-muted/30">
+            Built with Next.js &amp; Tailwind CSS
+          </p>
+        </div>
       </div>
-    </section>
+    </footer>
   );
 }

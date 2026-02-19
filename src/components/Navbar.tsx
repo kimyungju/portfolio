@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "PROJECTS", href: "#projects" },
@@ -20,7 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
@@ -30,24 +29,28 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          scrolled ? "bg-secondary/80 backdrop-blur-md" : "bg-transparent"
+      <motion.nav
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-secondary/60 backdrop-blur-xl border-b border-white/[0.04]"
+            : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          {/* Logo */}
-          <a href="#">
-            <Image src="/logo.svg" alt="YK Logo" width={40} height={40} />
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <a href="#" className="group relative">
+            <Image src="/logo.svg" alt="YK" width={36} height={36} />
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          {/* Desktop */}
+          <div className="hidden items-center gap-10 md:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm tracking-wider text-text-muted hover:text-white transition-colors"
+                className="relative text-[13px] font-medium tracking-[0.2em] text-text-muted transition-colors duration-300 hover:text-primary after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -55,7 +58,7 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="rounded-full border border-white/20 px-5 py-2 text-sm tracking-wider hover:bg-white/10 transition-colors"
+              className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[13px] font-medium tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-primary"
             >
               Download CV
             </a>
@@ -63,45 +66,62 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="text-2xl text-text-muted hover:text-white transition-colors md:hidden"
-            onClick={() => setMenuOpen(true)}
-            aria-label="Open menu"
+            className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
-            <HiMenuAlt4 />
+            <span
+              className={`h-px w-5 bg-text-secondary transition-all duration-300 ${
+                menuOpen ? "translate-y-[3px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-px w-5 bg-text-secondary transition-all duration-300 ${
+                menuOpen ? "-translate-y-[3px] -rotate-45" : ""
+              }`}
+            />
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile overlay */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 bg-secondary/95 backdrop-blur-md md:hidden">
-          <button
-            className="absolute top-5 right-6 text-3xl text-text-muted hover:text-white transition-colors"
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close menu"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-secondary/98 backdrop-blur-2xl md:hidden"
           >
-            <HiX />
-          </button>
-
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-lg tracking-wider text-text-muted hover:text-white transition-colors"
+            {NAV_LINKS.map((link, i) => (
+              <motion.a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ delay: i * 0.08, duration: 0.3 }}
+                className="font-display text-2xl font-medium tracking-[0.15em] text-text-secondary transition-colors hover:text-primary"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+            <motion.a
+              href="/resume.pdf"
+              download
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ delay: 0.25, duration: 0.3 }}
+              className="mt-4 rounded-full border border-white/10 px-6 py-3 text-sm tracking-[0.15em] text-text-secondary transition-colors hover:text-primary"
             >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="/resume.pdf"
-            download
-            className="rounded-full border border-white/20 px-5 py-2 text-sm tracking-wider hover:bg-white/10 transition-colors"
-          >
-            Download CV
-          </a>
-        </div>
-      )}
+              Download CV
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

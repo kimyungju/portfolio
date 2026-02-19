@@ -5,71 +5,125 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-24 max-w-6xl mx-auto">
-      <p className="text-sm tracking-wider text-text-muted mb-12">DEVELOPER</p>
+    <section className="relative px-8 py-32 md:px-16 lg:px-24">
+      {/* Background glow */}
+      <div className="pointer-events-none absolute left-0 bottom-1/4 h-[400px] w-[400px] rounded-full bg-accent-warm/[0.03] blur-[100px]" />
 
-      <div className="flex flex-col lg:flex-row gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+      <div className="mx-auto max-w-6xl">
+        {/* Section header */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-text-muted/60"
         >
-          <Image
-            src="/profile.svg"
-            alt="Yungju Kim"
-            width={400}
-            height={400}
-            className="rounded-2xl"
-          />
-        </motion.div>
-
-        <motion.div
-          className="space-y-4 text-text-muted leading-relaxed"
+          ABOUT
+        </motion.p>
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-display text-4xl font-700 tracking-[-0.02em] md:text-5xl"
         >
-          <p>
-            I&apos;m Yungju, an undergraduate Computer Science student at the{" "}
-            <strong className="text-white">
-              National University of Singapore
-            </strong>
-            . I made an intentional pivot from Business and Economics to CS
-            because I wanted to turn ideas into reality through{" "}
-            <code className="bg-badge-bg px-1.5 py-0.5 rounded text-sm text-white">
-              code
-            </code>
-            .
-          </p>
+          Developer
+        </motion.h2>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-6 mb-16 h-px w-full max-w-xs origin-left bg-gradient-to-r from-white/15 to-transparent"
+        />
 
-          <p>
-            I focus on building{" "}
-            <strong className="text-white">
-              AI-powered full-stack applications
-            </strong>{" "}
-            — from autonomous agents to real-time platforms — using tools like
-            Next.js, Python, and OpenAI. Most of my projects start from a simple
-            question: how can technology make this easier?
-          </p>
-
-          <p>
-            Fluent in{" "}
-            <strong className="text-white">English and Korean</strong>, I bring
-            an international perspective from growing up in Kuala Lumpur and
-            studying in Singapore. When I&apos;m not coding, I&apos;m
-            contributing to the developer community at NUS as Head of Technology
-            at Developer Group.
-          </p>
-
-          <a
-            href="#contact"
-            className="inline-block mt-4 rounded-full bg-white text-secondary px-6 py-3 text-sm font-medium hover:bg-white/90 transition-colors"
+        <div className="flex flex-col items-start gap-14 lg:flex-row">
+          {/* Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
+            className="shrink-0"
           >
-            Send me a message
-          </a>
-        </motion.div>
+            <div className="relative overflow-hidden rounded-2xl border border-white/[0.06]">
+              <Image
+                src="/profile.svg"
+                alt="Yungju Kim"
+                width={380}
+                height={380}
+                className="transition-transform duration-700 hover:scale-[1.03]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
+            </div>
+          </motion.div>
+
+          {/* Bio */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-5"
+          >
+            <p className="text-[15px] leading-[1.8] text-text-muted">
+              I&apos;m Yungju, an undergraduate Computer Science student at the{" "}
+              <strong className="font-semibold text-primary">
+                National University of Singapore
+              </strong>
+              . I made an intentional pivot from Business and Economics to CS
+              because I wanted to turn ideas into reality through{" "}
+              <code className="rounded border border-white/[0.08] bg-badge-bg px-1.5 py-0.5 font-mono text-[13px] text-primary/90">
+                code
+              </code>
+              .
+            </p>
+
+            <p className="text-[15px] leading-[1.8] text-text-muted">
+              I focus on building{" "}
+              <strong className="font-semibold text-primary">
+                AI-powered full-stack applications
+              </strong>{" "}
+              &mdash; from autonomous agents to real-time platforms &mdash;
+              using tools like Next.js, Python, and OpenAI. Most of my projects
+              start from a simple question: how can technology make this easier?
+            </p>
+
+            <p className="text-[15px] leading-[1.8] text-text-muted">
+              Fluent in{" "}
+              <strong className="font-semibold text-primary">
+                English and Korean
+              </strong>
+              , I bring an international perspective from growing up in Kuala
+              Lumpur and studying in Singapore. When I&apos;m not coding,
+              I&apos;m contributing to the developer community at NUS as Head of
+              Technology at Developer Group.
+            </p>
+
+            <div className="pt-4">
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-[13px] font-semibold text-secondary transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)]"
+              >
+                Send me a message
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-transform duration-300 group-hover:translate-x-0.5"
+                >
+                  <path d="m5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
