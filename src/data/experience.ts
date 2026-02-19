@@ -25,7 +25,7 @@ export const experiences: ExperienceEntry[] = [
     title: "Signal & Computer Administration Specialist",
     organization: "Republic of Korea Army, 35th Infantry Division HQ",
     description:
-      "Served in the Command & Control Office at Division Headquarters, overseeing communication and information systems. Provided IT and radio network support to 120+ personnel, integrating digital and radio channels for real-time coordination. Maintained and troubleshot over 40 computer systems and network terminals.",
+      "Managed IT and communication systems at Division HQ, supporting 120+ personnel. Maintained 40+ computer systems and network terminals.",
   },
   {
     year: "2024",
@@ -37,7 +37,7 @@ export const experiences: ExperienceEntry[] = [
   {
     year: "2025–2026",
     title: "Technology Associate → Head of Technology",
-    organization: "Developer Group @ NUS Computing",
+    organization: "Developer's Group @ NUS Computing",
     description:
       "Contributing to a student-led tech community with 2,300+ followers. Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",
   },

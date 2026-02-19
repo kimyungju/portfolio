@@ -102,7 +102,7 @@ export default function About() {
               </strong>
               , aiming to build systems that are both powerful and secure.
               When I&apos;m not coding, I&apos;m contributing to the developer
-              community at NUS as Head of Technology at Developer Group.
+              community at NUS as Head of Technology at Developer&apos;s Group.
             </p>
 
             <div className="pt-4">

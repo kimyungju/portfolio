@@ -65,7 +65,7 @@ export const projects: Project[] = [
     number: "//4",
     title: "DevG Website",
     description:
-      "The official website for Developer Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
+      "The official website for Developer's Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
     longDescription:
       "Designed and developed the organization website to improve visibility and outreach, supporting event promotion and community engagement.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],

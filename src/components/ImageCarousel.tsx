@@ -7,8 +7,6 @@ const images = [
   "/experience/photo-1.jpeg",
   "/experience/photo-2.jpeg",
   "/experience/photo-3.jpeg",
-  "/experience/photo-4.png",
-  "/experience/photo-5.png",
 ];
 
 const AUTO_ADVANCE_MS = 4000;

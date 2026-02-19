@@ -103,7 +103,7 @@ export default function Hero() {
         </p>
 
         {/* Headline — rotating titles */}
-        <h1 className="font-display text-[clamp(3rem,9vw,8rem)] font-800 leading-[0.95] tracking-[-0.03em]">
+        <h1 className="font-display text-[clamp(1.8rem,5.5vw,5rem)] font-800 leading-[0.95] tracking-[-0.03em]">
           <span className="relative block overflow-hidden h-[1em]">
             <AnimatePresence mode="wait">
               <motion.span
@@ -112,7 +112,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -150, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 50 }}
-                className="absolute inset-x-0 text-transparent bg-clip-text bg-gradient-to-r from-primary via-text-secondary to-text-muted"
+                className="absolute inset-x-0 whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-primary via-text-secondary to-text-muted"
               >
                 {TITLES[titleIndex]}
               </motion.span>
