@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { HiChevronDown } from "react-icons/hi";
 import TechStackStrip from "@/components/TechStackStrip";
 
 export default function Hero() {
@@ -11,14 +12,14 @@ export default function Hero() {
       <div className="pointer-events-none absolute bottom-1/4 right-0 h-[400px] w-[400px] rounded-full bg-accent-warm/[0.03] blur-[100px]" />
 
       <div className="relative z-10 max-w-5xl">
-        {/* Eyebrow */}
+        {/* Name label */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 font-mono text-[13px] tracking-[0.3em] text-cyan"
+          className="mb-6 font-mono text-[13px] tracking-widest font-medium text-text-muted"
         >
-          PORTFOLIO &rsquo;26
+          YUNGJU KIM
         </motion.p>
 
         {/* Headline */}
@@ -35,15 +36,15 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-8 max-w-xl text-lg leading-relaxed text-text-muted"
         >
-          I&apos;m Yungju &mdash; I build AI-powered full-stack applications
-          focused on turning ideas into products that solve real problems.
+          I build AI-powered full-stack applications focused on turning ideas
+          into products that solve real problems.
         </motion.p>
 
         {/* Divider line */}
@@ -78,8 +79,9 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="h-6 w-px bg-gradient-to-b from-text-muted/40 to-transparent"
-        />
+        >
+          <HiChevronDown className="text-text-muted/50 text-lg" />
+        </motion.div>
       </motion.div>
     </section>
   );
