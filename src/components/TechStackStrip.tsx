@@ -42,14 +42,14 @@ export default function TechStackStrip() {
         {duplicated.map((tech, i) => (
           <div
             key={`${tech.iconSlug}-${i}`}
-            className="flex items-center gap-3 rounded-full border border-white/[0.06] bg-white/[0.02] px-5 py-2.5 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.05]"
+            className="flex items-center gap-3 rounded-full border border-white/[0.15] bg-white/[0.08] px-5 py-2.5 transition-all duration-300 hover:border-white/[0.3] hover:bg-white/[0.12]"
+            style={{ boxShadow: '0 0 12px rgba(255,255,255,0.05)' }}
           >
             <span style={{ color: tech.brandColor }}>
               {iconMap[tech.iconSlug] ?? tech.name}
             </span>
             <span
-              className="text-sm font-medium whitespace-nowrap"
-              style={{ color: tech.brandColor }}
+              className="text-sm font-medium whitespace-nowrap text-[#e5e5e5]"
             >
               {tech.name}
             </span>
