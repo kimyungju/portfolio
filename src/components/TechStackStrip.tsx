@@ -8,6 +8,7 @@ import {
   SiPostgresql,
   SiDocker,
   SiTailwindcss,
+  SiCplusplus,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 
@@ -15,16 +16,7 @@ const iconMap: Record<string, React.ReactNode> = {
   javascript: <SiJavascript size={40} />,
   java: <FaJava size={40} />,
   python: <SiPython size={40} />,
-  c: (
-    <span className="flex items-center justify-center w-10 h-10 border border-current rounded text-base font-bold">
-      C
-    </span>
-  ),
-  sql: (
-    <span className="flex items-center justify-center w-10 h-10 border border-current rounded text-xs font-bold">
-      SQL
-    </span>
-  ),
+  cplusplus: <SiCplusplus size={40} />,
   nextdotjs: <SiNextdotjs size={40} />,
   react: <SiReact size={40} />,
   typescript: <SiTypescript size={40} />,

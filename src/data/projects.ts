@@ -7,6 +7,7 @@ export interface Project {
   techStack: string[];
   liveUrl?: string;
   githubUrl?: string;
+  mobileSrc?: string;
   logoSrc: string;
   previewSrc: string;
   readTime: string;

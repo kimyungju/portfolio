@@ -1,6 +1,6 @@
 "use client";
 
-import { FaLinkedinIn, FaInstagram, FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { socials } from "@/data/socials";
 
 const links = [
@@ -11,11 +11,6 @@ const links = [
     color: "#0A66C2",
   },
   {
-    href: socials.instagram,
-    icon: FaInstagram,
-    label: "Instagram",
-  },
-  {
     href: socials.github,
     icon: FaGithub,
     label: "GitHub",
@@ -24,7 +19,7 @@ const links = [
 
 export default function SocialBar() {
   return (
-    <div className="fixed top-1/2 right-6 z-50 -translate-y-1/2 hidden lg:flex flex-col gap-5">
+    <div className="fixed bottom-1/5 right-20 z-50 hidden lg:flex flex-col gap-5">
       {links.map(({ href, icon: Icon, label, color }) => (
         <a
           key={label}
@@ -32,7 +27,7 @@ export default function SocialBar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="group flex items-center gap-2 transition-transform duration-200 hover:scale-110"
+          className="group flex items-center gap-2 flex-row-reverse transition-transform duration-200 hover:scale-110"
         >
           <Icon
             size={22}
