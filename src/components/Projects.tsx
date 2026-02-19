@@ -6,9 +6,9 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative px-8 py-32 md:px-16 lg:px-24">
+    <section id="projects" className="relative px-4 py-32 md:px-8 lg:px-12">
       {/* Section header */}
-      <div className="mb-20 max-w-6xl mx-auto">
+      <div className="mb-20 max-w-[90rem] mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function Projects() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[90rem] mx-auto">
         {projects.map((project, i) => (
           <ProjectCard key={project.slug} project={project} index={i} />
         ))}

@@ -40,7 +40,7 @@ export default function ProjectCard({
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-8 font-mono text-xl tracking-[0.2em]"
+        className="mb-8 font-mono text-2xl tracking-[0.2em]"
       >
         <span className="text-cyan font-bold">{"//"}</span>
         <span className="ml-1 text-white font-bold">
@@ -54,7 +54,7 @@ export default function ProjectCard({
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative overflow-hidden rounded-2xl border border-white/[0.04] bg-white/[0.015] p-6 md:p-10 transition-colors duration-500 hover:border-white/[0.08] hover:bg-white/[0.025]"
+        className="relative overflow-hidden rounded-2xl border border-white/[0.04] bg-white/[0.015] p-6 md:p-10 lg:p-14 transition-colors duration-500 hover:border-white/[0.08] hover:bg-white/[0.025]"
       >
         {/* Mouse spotlight overlay */}
         <div
@@ -66,7 +66,7 @@ export default function ProjectCard({
         />
 
         <div
-          className={`relative z-10 flex flex-col gap-12 ${
+          className={`relative z-10 flex flex-col gap-8 lg:gap-14 ${
             isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
           }`}
         >
@@ -80,11 +80,11 @@ export default function ProjectCard({
               delay: 0.1,
               ease: [0.25, 0.1, 0, 1],
             }}
-            className="flex flex-1 flex-col justify-center gap-7 lg:max-w-[45%]"
+            className="flex flex-1 flex-col justify-center gap-7 lg:max-w-[40%]"
           >
             {/* Logo + Title */}
             <div className="flex items-center gap-5">
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-white/[0.08] bg-card-bg">
+              <div className="relative h-16 w-16 lg:h-20 lg:w-20 shrink-0 overflow-hidden rounded-xl border border-white/[0.08] bg-card-bg">
                 <Image
                   src={project.logoSrc}
                   alt={`${project.title} logo`}
@@ -92,13 +92,13 @@ export default function ProjectCard({
                   className="object-cover"
                 />
               </div>
-              <h3 className="font-display text-3xl font-800 tracking-[-0.02em] md:text-4xl lg:text-[2.75rem]">
+              <h3 className="font-display text-4xl font-800 tracking-[-0.02em] md:text-5xl lg:text-6xl">
                 {project.title}
               </h3>
             </div>
 
             {/* Description */}
-            <p className="max-w-xl text-lg leading-[1.75] text-text-secondary md:text-xl lg:text-[22px]">
+            <p className="max-w-xl text-xl leading-[1.75] text-text-secondary md:text-2xl">
               {project.description}
             </p>
 
@@ -109,7 +109,7 @@ export default function ProjectCard({
                 return (
                   <span
                     key={tech}
-                    className="rounded-full px-5 py-2 text-base font-medium tracking-wide transition-all duration-200 hover:brightness-125"
+                    className="rounded-full px-6 py-2.5 text-lg font-medium tracking-wide transition-all duration-200 hover:brightness-125"
                     style={{
                       borderWidth: "1px",
                       borderStyle: "solid",
@@ -131,17 +131,17 @@ export default function ProjectCard({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-8 py-3.5 text-lg font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-10 py-4 text-xl font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
                 >
-                  <HiOutlineExternalLink size={18} />
+                  <HiOutlineExternalLink size={22} />
                   View Project
                 </a>
               )}
               <Link
                 href={`/projects/${project.slug}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-8 py-3.5 text-lg font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-10 py-4 text-xl font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
               >
-                <HiOutlineDocumentText size={18} />
+                <HiOutlineDocumentText size={22} />
                 Read Full Story
               </Link>
             </div>
@@ -157,7 +157,7 @@ export default function ProjectCard({
               delay: 0.25,
               ease: [0.25, 0.1, 0, 1],
             }}
-            className="flex-1 lg:max-w-[55%] flex items-center"
+            className="flex-1 lg:max-w-[60%] flex items-center"
           >
             <div className="group/img w-full">
               <div
