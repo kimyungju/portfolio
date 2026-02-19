@@ -32,13 +32,13 @@ const contactLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative px-8 pb-12 pt-32 md:px-16 lg:px-24">
+    <footer id="contact" className="relative px-4 pb-12 pt-32 md:px-8 lg:px-12">
       {/* Top divider */}
       <div className="mx-auto mb-20 max-w-6xl">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       </div>
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[90rem]">
         {/* Section header */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}

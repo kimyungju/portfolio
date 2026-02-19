@@ -96,7 +96,7 @@ export default function Hero() {
       {/* Dot grid pattern */}
       <div className="dot-grid pointer-events-none absolute inset-0 opacity-60" />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 md:px-8 lg:px-12">
         {/* Name label — scramble re-triggers on scroll */}
         <p className="mb-6 font-mono text-[clamp(3rem,6vw,5rem)] tracking-[0.2em] font-bold text-text-muted leading-none">
           {name.displayed || "\u00A0"}

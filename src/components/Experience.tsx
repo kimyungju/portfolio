@@ -7,11 +7,11 @@ import ImageCarousel from "./ImageCarousel";
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative px-8 py-32 md:px-16 lg:px-24">
+    <section id="experience" className="relative px-4 py-32 md:px-8 lg:px-12">
       {/* Background accent */}
       <div className="pointer-events-none absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-accent/[0.02] blur-[120px]" />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-[90rem]">
         {/* Section header */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
