@@ -63,7 +63,7 @@ export const projects: Project[] = [
   {
     slug: "devg-website",
     number: "//4",
-    title: "Developer Group",
+    title: "DG Website",
     description:
       "The official website for Developer Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
     longDescription:
