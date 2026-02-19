@@ -5,25 +5,26 @@ import { ExperienceEntry, RoleProgression } from "@/data/experience";
 
 function RoleProgressionTimeline({ roles }: { roles: RoleProgression[] }) {
   return (
-    <div className="mt-4 space-y-0">
+    <div className="relative mt-4 ml-1.5">
+      {/* Continuous vertical line connecting all dots */}
+      <div className="absolute left-0 top-[7px] bottom-[7px] w-px bg-white/10" />
+
       {roles.map((role, i) => (
-        <div key={role.role} className="relative flex gap-3">
-          {/* Dot + connecting line */}
-          <div className="flex flex-col items-center">
-            <div
-              className={`relative z-10 mt-1.5 h-3 w-3 shrink-0 rounded-full ${
-                role.current
-                  ? "bg-cyan shadow-[0_0_8px_rgba(34,211,238,0.5)]"
-                  : "border border-white/20 bg-secondary"
-              }`}
-            />
-            {i < roles.length - 1 && (
-              <div className="w-px flex-1 bg-white/10" />
-            )}
-          </div>
+        <div
+          key={role.role}
+          className={`relative flex gap-3 ${i < roles.length - 1 ? "pb-5" : ""}`}
+        >
+          {/* Dot — centered on the vertical line */}
+          <div
+            className={`relative z-10 mt-1.5 h-3 w-3 shrink-0 -ml-[5px] rounded-full ${
+              role.current
+                ? "bg-cyan shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+                : "border border-white/20 bg-secondary"
+            }`}
+          />
 
           {/* Role content */}
-          <div className={`pb-5 ${i === roles.length - 1 ? "pb-0" : ""}`}>
+          <div>
             <div className="flex items-baseline gap-3">
               <span
                 className={`text-lg font-600 md:text-xl ${
@@ -83,12 +84,14 @@ export default function ExperienceTimeline({
               </span>
             </div>
 
-            {/* Dot on timeline */}
-            <div className="relative flex shrink-0 items-start pt-2">
-              <div className="relative z-10 h-2.5 w-2.5 rounded-full border border-white/20 bg-secondary transition-colors duration-300 group-hover:border-accent group-hover:bg-accent/20">
-                <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100" />
+            {/* Dot on timeline — hidden for role-progression entries */}
+            {!entry.roles && (
+              <div className="relative flex shrink-0 items-start pt-2">
+                <div className="relative z-10 h-2.5 w-2.5 rounded-full border border-white/20 bg-secondary transition-colors duration-300 group-hover:border-accent group-hover:bg-accent/20">
+                  <div className="absolute inset-0 rounded-full bg-accent/20 opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100" />
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Content */}
             <div className="pb-2">
@@ -97,9 +100,6 @@ export default function ExperienceTimeline({
                   <h3 className="font-display text-xl font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-2xl">
                     {entry.organization}
                   </h3>
-                  <p className="mt-2 max-w-xl text-lg leading-[1.7] text-text-muted md:text-xl">
-                    {entry.description}
-                  </p>
                   <RoleProgressionTimeline roles={entry.roles} />
                 </>
               ) : (
