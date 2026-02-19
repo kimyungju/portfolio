@@ -39,18 +39,18 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6">
           <a href="/" className="group relative">
-            <Image src="/logo.svg" alt="YK" width={36} height={36} />
+            <Image src="/logo.svg" alt="YK" width={44} height={44} />
           </a>
 
           {/* Desktop */}
-          <div className="hidden items-center gap-10 md:flex">
+          <div className="hidden items-center gap-14 md:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="relative text-[13px] font-medium tracking-[0.2em] text-text-muted transition-colors duration-300 hover:text-primary after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-lg font-medium tracking-[0.18em] text-text-muted transition-colors duration-300 hover:text-primary after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[13px] font-medium tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-primary"
+              className="rounded-full border border-white/10 bg-white/[0.03] px-7 py-3 text-[15px] font-medium tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-primary"
             >
               Download CV
             </a>
@@ -66,17 +66,17 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-[5px] md:hidden"
+            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[6px] md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
             <span
-              className={`h-px w-5 bg-text-secondary transition-all duration-300 ${
+              className={`h-px w-6 bg-text-secondary transition-all duration-300 ${
                 menuOpen ? "translate-y-[3px] rotate-45" : ""
               }`}
             />
             <span
-              className={`h-px w-5 bg-text-secondary transition-all duration-300 ${
+              className={`h-px w-6 bg-text-secondary transition-all duration-300 ${
                 menuOpen ? "-translate-y-[3px] -rotate-45" : ""
               }`}
             />
