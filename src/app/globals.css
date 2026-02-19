@@ -133,7 +133,7 @@ body::before {
 }
 
 .article-prose p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--color-text-muted);
   margin-bottom: 1.25rem;
@@ -209,7 +209,7 @@ body::before {
 }
 
 .article-prose li {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;

@@ -110,17 +110,44 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* Preview image — takes ~55% */}
-        <div className="flex-1 lg:max-w-[55%]">
-          <div className="group/img relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card-bg transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]">
-            <Image
-              src={project.previewSrc}
-              alt={`${project.title} preview`}
-              width={1080}
-              height={608}
-              className="w-full transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
-            />
-            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
+        {/* Preview image in laptop mockup — takes ~55% */}
+        <div className="flex-1 lg:max-w-[55%] flex items-center">
+          <div className="group/img w-full">
+            <div
+              className="relative mx-auto"
+              style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.5))" }}
+            >
+              {/* Screen bezel */}
+              <div className="rounded-2xl bg-[#1e1f26] p-3 pb-3">
+                {/* Camera dot */}
+                <div className="flex justify-center pb-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#3a3b42]" />
+                </div>
+                {/* Screen — locked to 16:10 laptop ratio */}
+                <div className="relative overflow-hidden rounded-lg bg-black aspect-[16/10]">
+                  <Image
+                    src={project.previewSrc}
+                    alt={`${project.title} preview`}
+                    fill
+                    className="object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
+                  />
+                  <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
+                </div>
+              </div>
+              {/* Laptop base */}
+              <div className="relative mx-auto w-[108%] -ml-[4%]">
+                <div
+                  className="h-4 rounded-b-2xl"
+                  style={{
+                    background: "linear-gradient(to bottom, #2e2f36, #393a42)",
+                  }}
+                />
+                {/* Notch indent */}
+                <div className="absolute left-1/2 top-0 h-1.5 w-20 -translate-x-1/2 rounded-b-lg bg-[#44454d]" />
+              </div>
+              {/* Bottom shadow ledge */}
+              <div className="mx-auto w-[70%] h-1 rounded-b-xl bg-[#2a2b32] opacity-60" />
+            </div>
           </div>
         </div>
       </div>

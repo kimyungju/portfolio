@@ -25,8 +25,8 @@ export const projects: Project[] = [
     techStack: ["LangGraph", "FastAPI", "OpenAI", "Next.js", "PostgreSQL", "Docker"],
     liveUrl: "https://pricewise-ai-shop.vercel.app/",
     logoSrc: "/projects/pricewise-logo.svg",
-    previewSrc: "/projects/pricewise-preview.svg",
-    readTime: "18 min read",
+    previewSrc: "/projects/pricewise-preview.png",
+    readTime: "5 min read",
     publishDate: "19 February 2026",
   },
   {
@@ -40,8 +40,8 @@ export const projects: Project[] = [
     techStack: ["Next.js", "React", "TypeScript", "OpenAI", "Supabase", "Clerk"],
     liveUrl: "https://interview-pilot-ace.vercel.app/",
     logoSrc: "/projects/interviewpilot-logo.svg",
-    previewSrc: "/projects/interviewpilot-preview.svg",
-    readTime: "18 min read",
+    previewSrc: "/projects/interviewpilot-preview.png",
+    readTime: "5 min read",
     publishDate: "19 February 2026",
   },
   {
@@ -55,8 +55,8 @@ export const projects: Project[] = [
     techStack: ["Next.js", "React", "TypeScript", "Convex", "OpenAI", "Clerk"],
     liveUrl: "https://castory-ai.vercel.app/",
     logoSrc: "/projects/castory-logo.svg",
-    previewSrc: "/projects/castory-preview.svg",
-    readTime: "12 min read",
+    previewSrc: "/projects/castory-preview.png",
+    readTime: "4 min read",
     publishDate: "19 February 2026",
   },
   {
