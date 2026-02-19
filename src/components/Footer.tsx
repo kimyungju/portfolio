@@ -45,7 +45,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-cyan/80"
+          className="mb-3 font-mono text-[15px] tracking-[0.3em] text-cyan/80"
         >
           CONTACT
         </motion.p>
@@ -54,7 +54,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-4xl font-700 tracking-[-0.02em] md:text-5xl"
+          className="font-display text-5xl font-700 tracking-[-0.02em] md:text-6xl"
         >
           Get In Touch
         </motion.h2>
@@ -63,7 +63,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mt-4 max-w-lg text-lg leading-relaxed text-text-muted"
+          className="mt-4 max-w-lg text-lg leading-relaxed text-text-muted md:text-xl"
         >
           Have a project in mind or just want to connect? I&apos;d love to hear
           from you.
@@ -93,7 +93,7 @@ export default function Footer() {
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.06] text-text-muted transition-all duration-300 group-hover:bg-cyan/10 group-hover:text-cyan">
                 {link.icon}
               </span>
-              <span className="text-[13px] font-medium text-text-muted transition-colors duration-300 group-hover:text-primary">
+              <span className="text-[15px] font-medium text-text-muted transition-colors duration-300 group-hover:text-primary">
                 {link.label}
               </span>
             </motion.a>

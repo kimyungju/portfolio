@@ -40,7 +40,7 @@ export default function ProjectCard({
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-8 font-mono text-lg tracking-[0.2em]"
+        className="mb-8 font-mono text-xl tracking-[0.2em]"
       >
         <span className="text-cyan font-bold">{"//"}</span>
         <span className="ml-1 text-white font-bold">
@@ -98,7 +98,7 @@ export default function ProjectCard({
             </div>
 
             {/* Description */}
-            <p className="max-w-xl text-lg leading-[1.75] text-text-secondary md:text-xl">
+            <p className="max-w-xl text-lg leading-[1.75] text-text-secondary md:text-xl lg:text-[22px]">
               {project.description}
             </p>
 
@@ -109,7 +109,7 @@ export default function ProjectCard({
                 return (
                   <span
                     key={tech}
-                    className="rounded-full px-4 py-1.5 text-sm font-medium tracking-wide transition-all duration-200 hover:brightness-125"
+                    className="rounded-full px-5 py-2 text-base font-medium tracking-wide transition-all duration-200 hover:brightness-125"
                     style={{
                       borderWidth: "1px",
                       borderStyle: "solid",
@@ -131,7 +131,7 @@ export default function ProjectCard({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-8 py-3.5 text-[15px] font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-8 py-3.5 text-lg font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
                 >
                   <HiOutlineExternalLink size={18} />
                   View Project
@@ -139,7 +139,7 @@ export default function ProjectCard({
               )}
               <Link
                 href={`/projects/${project.slug}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-8 py-3.5 text-[15px] font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-8 py-3.5 text-lg font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
               >
                 <HiOutlineDocumentText size={18} />
                 Read Full Story

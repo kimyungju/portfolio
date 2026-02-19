@@ -14,7 +14,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-cyan/80"
+          className="mb-3 font-mono text-[15px] tracking-[0.3em] text-cyan/80"
         >
           SELECTED WORK
         </motion.p>
@@ -23,7 +23,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-4xl font-700 tracking-[-0.02em] md:text-5xl"
+          className="font-display text-5xl font-700 tracking-[-0.02em] md:text-6xl"
         >
           Projects
         </motion.h2>

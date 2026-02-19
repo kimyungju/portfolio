@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
 import TechStackStrip from "@/components/TechStackStrip";
 
@@ -67,11 +67,22 @@ function useTextScramble(
   return { displayed, done };
 }
 
+const TITLES = ["Software Engineer.", "Cyber Security Engineer."];
+
 export default function Hero() {
   const heroRef = useRef(null);
   const inView = useInView(heroRef, { once: false, amount: 0.3 });
 
   const name = useTextScramble("YUNGJU KIM", 100, 1500, inView);
+
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % TITLES.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -87,16 +98,25 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         {/* Name label — scramble re-triggers on scroll */}
-        <p className="mb-6 font-mono text-[clamp(2.5rem,5vw,4rem)] tracking-[0.2em] font-bold text-text-muted leading-none">
+        <p className="mb-6 font-mono text-[clamp(3rem,6vw,5rem)] tracking-[0.2em] font-bold text-text-muted leading-none">
           {name.displayed || "\u00A0"}
         </p>
 
-        {/* Headline — static text */}
-        <h1 className="font-display text-[clamp(2.5rem,8vw,7rem)] font-800 leading-[0.95] tracking-[-0.03em]">
-          Aspiring
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-text-secondary to-text-muted">
-            Software Engineer.
+        {/* Headline — rotating titles */}
+        <h1 className="font-display text-[clamp(3rem,9vw,8rem)] font-800 leading-[0.95] tracking-[-0.03em]">
+          <span className="relative block overflow-hidden h-[1em]">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={TITLES[titleIndex]}
+                initial={{ y: 150, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -150, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 50 }}
+                className="absolute inset-x-0 text-transparent bg-clip-text bg-gradient-to-r from-primary via-text-secondary to-text-muted"
+              >
+                {TITLES[titleIndex]}
+              </motion.span>
+            </AnimatePresence>
           </span>
         </h1>
 
@@ -106,7 +126,7 @@ export default function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 max-w-xl text-lg leading-relaxed text-text-muted"
+          className="mt-8 max-w-2xl text-xl leading-relaxed text-text-muted md:text-2xl"
         >
           I build AI-powered full-stack applications focused on turning ideas
           into products that solve real problems.

@@ -16,7 +16,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-cyan/80"
+          className="mb-3 font-mono text-[15px] tracking-[0.3em] text-cyan/80"
         >
           ABOUT
         </motion.p>
@@ -25,7 +25,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-4xl font-700 tracking-[-0.02em] md:text-5xl"
+          className="font-display text-5xl font-700 tracking-[-0.02em] md:text-6xl"
         >
           Developer
         </motion.h2>
@@ -66,7 +66,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-5"
           >
-            <p className="text-lg leading-[1.85] text-text-muted">
+            <p className="text-lg leading-[1.85] text-text-muted md:text-xl">
               I&apos;m Yungju, an undergraduate Computer Science student at the{" "}
               <strong className="font-semibold text-primary">
                 National University of Singapore
@@ -79,7 +79,7 @@ export default function About() {
               .
             </p>
 
-            <p className="text-lg leading-[1.85] text-text-muted">
+            <p className="text-lg leading-[1.85] text-text-muted md:text-xl">
               I focus on building{" "}
               <strong className="font-semibold text-primary">
                 AI-powered full-stack applications
@@ -89,7 +89,7 @@ export default function About() {
               simple question: how can technology make this easier?
             </p>
 
-            <p className="text-lg leading-[1.85] text-text-muted">
+            <p className="text-lg leading-[1.85] text-text-muted md:text-xl">
               Fluent in{" "}
               <strong className="font-semibold text-primary">
                 English and Korean
@@ -108,7 +108,7 @@ export default function About() {
             <div className="pt-4">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-[13px] font-semibold text-secondary transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)]"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-base font-semibold text-secondary transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)]"
               >
                 Send me a message
                 <svg

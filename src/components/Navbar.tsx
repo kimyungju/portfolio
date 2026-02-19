@@ -41,7 +41,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6">
           <a href="/" className="group relative">
-            <Image src="/logo.svg" alt="YK" width={44} height={44} />
+            <Image src="/logo.svg" alt="YK" width={52} height={52} />
           </a>
 
           {/* Desktop */}
@@ -50,7 +50,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative text-lg font-medium tracking-[0.18em] text-text-muted transition-colors duration-300 hover:text-primary after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-xl font-medium tracking-[0.18em] text-text-muted transition-colors duration-300 hover:text-primary after:absolute after:bottom-[-4px] after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <a
               href="/resume.pdf"
               download
-              className="rounded-full border border-white/10 bg-white/[0.03] px-7 py-3 text-[15px] font-medium tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-primary"
+              className="rounded-full border border-white/10 bg-white/[0.03] px-7 py-3 text-lg font-medium tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-primary"
             >
               Download CV
             </a>
