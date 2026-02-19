@@ -1,8 +1,16 @@
+export interface RoleProgression {
+  role: string;
+  period: string;
+  description?: string;
+  current?: boolean;
+}
+
 export interface ExperienceEntry {
   year: string;
   title: string;
   organization: string;
   description: string;
+  roles?: RoleProgression[];
 }
 
 export const experiences: ExperienceEntry[] = [
@@ -35,11 +43,24 @@ export const experiences: ExperienceEntry[] = [
       "Made an intentional pivot from Double Honours in BBA and Economics to Bachelor of Computing (Computer Science) to pursue technical specialization.",
   },
   {
-    year: "2025–2026",
-    title: "Technology Associate → Head of Technology",
+    year: "2024–2026",
+    title: "Developer Group @ NUS Computing",
     organization: "Developer Group @ NUS Computing",
     description:
-      "Contributing to a student-led tech community with 2,300+ followers. Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",
+      "Contributing to a student-led tech community with 2,300+ followers.",
+    roles: [
+      {
+        role: "Head of Technology",
+        period: "2025 – 2026",
+        description:
+          "Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",
+        current: true,
+      },
+      {
+        role: "Technology Associate",
+        period: "2024 – 2025",
+      },
+    ],
   },
   {
     year: "2025–2026",

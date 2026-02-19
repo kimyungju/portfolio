@@ -1,25 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExperienceEntry } from "@/data/experience";
+import { ExperienceEntry, RoleProgression } from "@/data/experience";
 
-function RoleTitle({ title }: { title: string }) {
-  if (!title.includes("→")) {
-    return <>{title}</>;
-  }
-
-  const roles = title.split("→").map((r) => r.trim());
+function RoleProgressionTimeline({ roles }: { roles: RoleProgression[] }) {
   return (
-    <span className="flex flex-col gap-2">
-      <span className="flex items-center gap-3 flex-wrap">
-        <span className="rounded-full border border-cyan/30 bg-cyan/[0.08] px-4 py-1.5 text-lg text-primary shadow-[0_0_12px_rgba(34,211,238,0.08)]">
-          {roles[1]}
-        </span>
-        <span className="rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-1.5 text-base text-text-muted/50">
-          {roles[0]}
-        </span>
-      </span>
-    </span>
+    <div className="mt-4 space-y-0">
+      {roles.map((role, i) => (
+        <div key={role.role} className="relative flex gap-3">
+          {/* Dot + connecting line */}
+          <div className="flex flex-col items-center">
+            <div
+              className={`relative z-10 mt-1.5 h-3 w-3 shrink-0 rounded-full ${
+                role.current
+                  ? "bg-cyan shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+                  : "border border-white/20 bg-secondary"
+              }`}
+            />
+            {i < roles.length - 1 && (
+              <div className="w-px flex-1 bg-white/10" />
+            )}
+          </div>
+
+          {/* Role content */}
+          <div className={`pb-5 ${i === roles.length - 1 ? "pb-0" : ""}`}>
+            <div className="flex items-baseline gap-3">
+              <span
+                className={`text-lg font-600 md:text-xl ${
+                  role.current ? "text-primary" : "text-text-muted/50"
+                }`}
+              >
+                {role.role}
+              </span>
+              <span
+                className={`whitespace-nowrap font-mono text-sm tracking-wide ${
+                  role.current ? "text-text-muted/70" : "text-text-muted/30"
+                }`}
+              >
+                {role.period}
+              </span>
+            </div>
+            {role.description && (
+              <p
+                className={`mt-1 max-w-xl text-base leading-[1.7] ${
+                  role.current ? "text-text-muted" : "text-text-muted/40"
+                }`}
+              >
+                {role.description}
+              </p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -31,7 +64,7 @@ export default function ExperienceTimeline({
   return (
     <div className="relative">
       {/* Continuous vertical line */}
-      <div className="absolute left-[88px] top-2 bottom-2 w-px bg-gradient-to-b from-white/10 via-white/[0.06] to-transparent md:left-[104px]" />
+      <div className="absolute left-[104px] top-2 bottom-2 w-px bg-gradient-to-b from-white/10 via-white/[0.06] to-transparent md:left-[120px]" />
 
       <div className="space-y-14">
         {entries.map((entry, i) => (
@@ -44,8 +77,8 @@ export default function ExperienceTimeline({
             className="group relative flex gap-6 md:gap-8"
           >
             {/* Year */}
-            <div className="w-20 shrink-0 pt-1 text-right md:w-24">
-              <span className="font-mono text-base tracking-wider text-text-muted/70 md:text-lg">
+            <div className="w-24 shrink-0 pt-1 text-right md:w-28">
+              <span className="whitespace-nowrap font-mono text-base tracking-wider text-text-muted/70 md:text-lg">
                 {entry.year}
               </span>
             </div>
@@ -59,15 +92,29 @@ export default function ExperienceTimeline({
 
             {/* Content */}
             <div className="pb-2">
-              <h3 className="font-display text-xl font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-2xl">
-                <RoleTitle title={entry.title} />
-              </h3>
-              <p className="mt-1 text-base font-medium text-accent/80 md:text-lg">
-                {entry.organization}
-              </p>
-              <p className="mt-2 max-w-xl text-lg leading-[1.7] text-text-muted md:text-xl">
-                {entry.description}
-              </p>
+              {entry.roles ? (
+                <>
+                  <h3 className="font-display text-xl font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-2xl">
+                    {entry.organization}
+                  </h3>
+                  <p className="mt-2 max-w-xl text-lg leading-[1.7] text-text-muted md:text-xl">
+                    {entry.description}
+                  </p>
+                  <RoleProgressionTimeline roles={entry.roles} />
+                </>
+              ) : (
+                <>
+                  <h3 className="font-display text-xl font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-2xl">
+                    {entry.title}
+                  </h3>
+                  <p className="mt-1 text-base font-medium text-accent/80 md:text-lg">
+                    {entry.organization}
+                  </p>
+                  <p className="mt-2 max-w-xl text-lg leading-[1.7] text-text-muted md:text-xl">
+                    {entry.description}
+                  </p>
+                </>
+              )}
             </div>
           </motion.div>
         ))}
