@@ -19,7 +19,7 @@ const links = [
 
 export default function SocialBar() {
   return (
-    <div className="fixed bottom-1/5 right-20 z-50 hidden lg:flex flex-col gap-5">
+    <div className="fixed bottom-1/5 right-20 z-50 hidden lg:flex flex-col gap-7">
       {links.map(({ href, icon: Icon, label, color }) => (
         <a
           key={label}
@@ -27,13 +27,15 @@ export default function SocialBar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="group flex items-center gap-2 flex-row-reverse transition-transform duration-200 hover:scale-110"
+          className="group flex items-center gap-3 flex-row-reverse"
         >
-          <Icon
-            size={22}
-            className="transition-[filter] duration-200 group-hover:brightness-125"
-            style={{ color: color ?? "#d1d5db" }}
-          />
+          <span className="flex h-14 w-14 items-center justify-center rounded-full transition-all duration-200 hover:bg-white/[0.06] hover:scale-110">
+            <Icon
+              size={40}
+              className="transition-[filter] duration-200 group-hover:brightness-125"
+              style={{ color: color ?? "#d1d5db" }}
+            />
+          </span>
           <span className="text-[11px] font-mono tracking-wide text-text-muted/0 group-hover:text-text-muted/80 transition-colors duration-200">
             {label}
           </span>
