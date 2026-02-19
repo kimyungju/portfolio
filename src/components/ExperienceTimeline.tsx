@@ -73,8 +73,11 @@ export default function ExperienceTimeline({
               {entry.roles ? (
                 <>
                   <h3 className="font-display text-xl font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-2xl">
-                    {entry.organization}
+                    {entry.title}
                   </h3>
+                  <p className="mt-1 text-base font-medium text-accent/80 md:text-lg">
+                    {entry.organization}
+                  </p>
                   <RoleTimeline roles={entry.roles} />
                 </>
               ) : (
