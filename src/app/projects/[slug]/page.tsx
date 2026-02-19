@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { HiOutlineClock } from "react-icons/hi";
 import { projects } from "@/data/projects";
-import Navbar from "@/components/Navbar";
+import StorySidebar from "@/components/StorySidebar";
 import PricewiseStory from "@/components/stories/PricewiseStory";
 import InterviewpilotStory from "@/components/stories/InterviewpilotStory";
 import CastoryStory from "@/components/stories/CastoryStory";
@@ -47,20 +48,23 @@ export default async function ProjectPage({
 
   return (
     <main id="top">
-      <Navbar />
+      <StorySidebar />
 
-      <article className="px-8 pt-32 pb-20 md:px-16 lg:px-24">
+      <article className="px-8 pt-28 pb-20 md:pt-16 md:pl-[100px] md:pr-16 lg:pl-[120px] lg:pr-24">
         <div className="mx-auto max-w-2xl">
           <h1 className="font-display text-[2rem] font-800 tracking-[-0.02em] leading-[1.2] md:text-[2.5rem]">
             The Dev&apos;s Story Behind {project.title}
           </h1>
 
           <div className="mt-6 flex items-center justify-between text-[13px] text-text-muted">
-            <span>{project.readTime}</span>
+            <span className="inline-flex items-center gap-1.5">
+              <HiOutlineClock size={14} />
+              {project.readTime}
+            </span>
             <span>{project.publishDate}</span>
           </div>
 
-          <div className="mt-4 mb-10 h-px w-full bg-white/[0.08]" />
+          <div className="mt-4 mb-10 h-[2px] w-full bg-gradient-to-r from-cyan via-teal to-cyan/0" />
 
           <div className="article-prose">
             {StoryComponent ? (

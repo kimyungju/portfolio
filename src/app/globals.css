@@ -230,6 +230,7 @@ body::before {
 .article-prose blockquote p {
   color: var(--color-text-secondary);
   font-style: italic;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
