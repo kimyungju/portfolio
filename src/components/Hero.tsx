@@ -16,7 +16,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 font-mono text-[13px] tracking-[0.3em] text-text-muted"
+          className="mb-6 font-mono text-[13px] tracking-[0.3em] text-cyan"
         >
           PORTFOLIO &rsquo;26
         </motion.p>
@@ -51,7 +51,7 @@ export default function Hero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-10 h-px w-full max-w-md origin-left bg-gradient-to-r from-white/20 to-transparent"
+          className="mt-10 h-px w-full max-w-md origin-left bg-gradient-to-r from-cyan via-purple/50 to-transparent"
         />
 
         {/* Tech stack */}

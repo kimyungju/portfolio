@@ -1,5 +1,3 @@
-"use client";
-
 import { techStack } from "@/data/techStack";
 import {
   SiJavascript,
@@ -12,49 +10,52 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 const iconMap: Record<string, React.ReactNode> = {
-  javascript: <SiJavascript size={20} />,
-  java: <FaJava size={20} />,
-  python: <SiPython size={20} />,
+  javascript: <SiJavascript size={40} />,
+  java: <FaJava size={40} />,
+  python: <SiPython size={40} />,
   c: (
-    <span className="flex items-center justify-center w-5 h-5 border border-white/20 rounded text-[10px] font-bold">
+    <span className="flex items-center justify-center w-10 h-10 border border-current rounded text-base font-bold">
       C
     </span>
   ),
   sql: (
-    <span className="flex items-center justify-center w-5 h-5 border border-white/20 rounded text-[8px] font-bold">
+    <span className="flex items-center justify-center w-10 h-10 border border-current rounded text-xs font-bold">
       SQL
     </span>
   ),
-  nextdotjs: <SiNextdotjs size={20} />,
-  react: <SiReact size={20} />,
-  typescript: <SiTypescript size={20} />,
-  postgresql: <SiPostgresql size={20} />,
-  docker: <SiDocker size={20} />,
-  tailwindcss: <SiTailwindcss size={20} />,
+  nextdotjs: <SiNextdotjs size={40} />,
+  react: <SiReact size={40} />,
+  typescript: <SiTypescript size={40} />,
+  postgresql: <SiPostgresql size={40} />,
+  docker: <SiDocker size={40} />,
+  tailwindcss: <SiTailwindcss size={40} />,
 };
 
 export default function TechStackStrip() {
+  const duplicated = [...techStack, ...techStack];
+
   return (
-    <div className="flex flex-wrap gap-3">
-      {techStack.map((tech, i) => (
-        <motion.div
-          key={tech.iconSlug}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 + i * 0.04, duration: 0.3 }}
-          className="group flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-text-muted transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.05] hover:text-primary"
-        >
-          <span className="transition-transform duration-300 group-hover:scale-110">
-            {iconMap[tech.iconSlug] ?? tech.name}
-          </span>
-          <span className="hidden text-[12px] font-medium sm:inline">
-            {tech.name}
-          </span>
-        </motion.div>
-      ))}
+    <div className="marquee-mask marquee-container overflow-hidden">
+      <div className="animate-marquee flex w-max gap-6">
+        {duplicated.map((tech, i) => (
+          <div
+            key={`${tech.iconSlug}-${i}`}
+            className="flex items-center gap-3 rounded-full border border-white/[0.06] bg-white/[0.02] px-5 py-2.5 transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.05]"
+          >
+            <span style={{ color: tech.brandColor }}>
+              {iconMap[tech.iconSlug] ?? tech.name}
+            </span>
+            <span
+              className="text-sm font-medium whitespace-nowrap"
+              style={{ color: tech.brandColor }}
+            >
+              {tech.name}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

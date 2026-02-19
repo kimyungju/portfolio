@@ -12,6 +12,10 @@
   --color-text-muted: #71717a;
   --color-text-secondary: #a1a1aa;
   --color-divider: #1a1a1a;
+  --color-cyan: #22d3ee;
+  --color-teal: #2dd4bf;
+  --color-purple: #a78bfa;
+  --color-lavender: #c4b5fd;
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-geist-mono);
@@ -65,4 +69,45 @@ body::before {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #3a3a3a;
+}
+
+/* Marquee animation for TechStackStrip */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }

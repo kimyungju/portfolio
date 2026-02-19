@@ -1,0 +1,28 @@
+export const techBrandColors: Record<string, { border: string; text: string; bg: string }> = {
+  "Next.js":      { border: "#ffffff", text: "#ffffff", bg: "rgba(255,255,255,0.05)" },
+  "React":        { border: "#61dafb", text: "#61dafb", bg: "rgba(97,218,251,0.06)" },
+  "TypeScript":   { border: "#3178c6", text: "#3178c6", bg: "rgba(49,120,198,0.06)" },
+  "JavaScript":   { border: "#f7df1e", text: "#f7df1e", bg: "rgba(247,223,30,0.06)" },
+  "Python":       { border: "#3776ab", text: "#3776ab", bg: "rgba(55,118,171,0.06)" },
+  "LangGraph":    { border: "#22d3ee", text: "#22d3ee", bg: "rgba(34,211,238,0.06)" },
+  "FastAPI":      { border: "#009688", text: "#009688", bg: "rgba(0,150,136,0.06)" },
+  "OpenAI":       { border: "#10a37f", text: "#10a37f", bg: "rgba(16,163,127,0.06)" },
+  "PostgreSQL":   { border: "#4169e1", text: "#4169e1", bg: "rgba(65,105,225,0.06)" },
+  "Docker":       { border: "#2496ed", text: "#2496ed", bg: "rgba(36,150,237,0.06)" },
+  "Supabase":     { border: "#3ecf8e", text: "#3ecf8e", bg: "rgba(62,207,142,0.06)" },
+  "Clerk":        { border: "#6c47ff", text: "#6c47ff", bg: "rgba(108,71,255,0.06)" },
+  "Convex":       { border: "#ee342f", text: "#ee342f", bg: "rgba(238,52,47,0.06)" },
+  "Tailwind CSS": { border: "#06b6d4", text: "#06b6d4", bg: "rgba(6,182,212,0.06)" },
+  "Figma":        { border: "#f24e1e", text: "#f24e1e", bg: "rgba(242,78,30,0.06)" },
+  "Node.js":      { border: "#339933", text: "#339933", bg: "rgba(51,153,51,0.06)" },
+  "Socket.io":    { border: "#010101", text: "#ffffff", bg: "rgba(255,255,255,0.04)" },
+  "AWS":          { border: "#ff9900", text: "#ff9900", bg: "rgba(255,153,0,0.06)" },
+  "Express":      { border: "#ffffff", text: "#ffffff", bg: "rgba(255,255,255,0.04)" },
+  "GCP":          { border: "#4285f4", text: "#4285f4", bg: "rgba(66,133,244,0.06)" },
+  "YOLO":         { border: "#00d4aa", text: "#00d4aa", bg: "rgba(0,212,170,0.06)" },
+  "Flask":        { border: "#ffffff", text: "#ffffff", bg: "rgba(255,255,255,0.04)" },
+  "Firebase":     { border: "#ffca28", text: "#ffca28", bg: "rgba(255,202,40,0.06)" },
+  "Vertex AI":    { border: "#4285f4", text: "#4285f4", bg: "rgba(66,133,244,0.06)" },
+};
+
+export const defaultBadgeColors = { border: "#6d9fff", text: "#6d9fff", bg: "rgba(109,159,255,0.06)" };

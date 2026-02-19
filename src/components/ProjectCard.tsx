@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/data/projects";
+import { techBrandColors, defaultBadgeColors } from "@/data/techBrandColors";
+import { HiOutlineExternalLink, HiOutlineDocumentText } from "react-icons/hi";
 
 export default function ProjectCard({
   project,
@@ -22,15 +24,18 @@ export default function ProjectCard({
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
       className="group relative mb-32 last:mb-0"
     >
-      {/* Number label */}
+      {/* Number label — cyan split */}
       <motion.span
         initial={{ opacity: 0, x: -10 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-6 inline-block font-mono text-xs tracking-[0.3em] text-text-muted/60"
+        className="mb-6 inline-block font-mono text-xs tracking-[0.3em]"
       >
-        {project.number}
+        <span className="text-cyan">{"//"}</span>
+        <span className="text-cyan/70">
+          {project.number.replace("//", "")}
+        </span>
       </motion.span>
 
       <div
@@ -58,40 +63,54 @@ export default function ProjectCard({
             {project.description}
           </p>
 
+          {/* Tech badges — per-tech brand colors */}
           <div className="flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-badge-border bg-badge-bg px-3 py-1 text-[11px] font-medium tracking-wide text-text-muted transition-colors duration-200 hover:border-white/10 hover:text-text-secondary"
-              >
-                {tech}
-              </span>
-            ))}
+            {project.techStack.map((tech) => {
+              const colors = techBrandColors[tech] ?? defaultBadgeColors;
+              return (
+                <span
+                  key={tech}
+                  className="rounded-full px-3 py-1 text-[11px] font-medium tracking-wide transition-all duration-200 hover:brightness-125"
+                  style={{
+                    borderWidth: "1px",
+                    borderStyle: "solid",
+                    borderColor: colors.border,
+                    color: colors.text,
+                    backgroundColor: colors.bg,
+                  }}
+                >
+                  {tech}
+                </span>
+              );
+            })}
           </div>
 
+          {/* Buttons — cyan + lavender */}
           <div className="flex items-center gap-3 pt-2">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/10 px-5 py-2.5 text-[13px] font-medium text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04] hover:text-primary"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[13px] font-semibold text-secondary transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:brightness-110"
               >
+                <HiOutlineExternalLink size={15} />
                 View Project
               </a>
             )}
             <Link
               href={`/projects/${project.slug}`}
-              className="rounded-full bg-primary px-5 py-2.5 text-[13px] font-semibold text-secondary transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="inline-flex items-center gap-2 rounded-full bg-lavender px-5 py-2.5 text-[13px] font-semibold text-secondary transition-all duration-300 hover:shadow-[0_0_20px_rgba(196,181,253,0.3)] hover:brightness-110"
             >
+              <HiOutlineDocumentText size={15} />
               Read Full Story
             </Link>
           </div>
         </div>
 
-        {/* Preview image */}
+        {/* Preview image — colored hover glow */}
         <div className="flex-1">
-          <div className="group/img relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card-bg">
+          <div className="group/img relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card-bg transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]">
             <Image
               src={project.previewSrc}
               alt={`${project.title} preview`}
@@ -99,8 +118,7 @@ export default function ProjectCard({
               height={608}
               className="w-full transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
             />
-            {/* Hover glow */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-accent/[0.06] to-transparent" />
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
           </div>
         </div>
       </div>

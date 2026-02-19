@@ -45,7 +45,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-text-muted/60"
+          className="mb-3 font-mono text-[13px] tracking-[0.3em] text-cyan/80"
         >
           CONTACT
         </motion.p>
@@ -63,7 +63,7 @@ export default function Footer() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 mb-12 h-px w-full max-w-xs origin-left bg-gradient-to-r from-white/15 to-transparent"
+          className="mt-6 mb-12 h-px w-full max-w-xs origin-left bg-gradient-to-r from-cyan via-purple/40 to-transparent"
         />
 
         {/* Contact links */}
