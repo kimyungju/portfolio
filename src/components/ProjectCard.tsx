@@ -114,17 +114,25 @@ export default function ProjectCard({
         <div className="flex-1 lg:max-w-[55%] flex items-center">
           <div className="group/img w-full">
             <div
-              className="relative mx-auto"
-              style={{ filter: "drop-shadow(0 25px 60px rgba(0,0,0,0.5))" }}
+              className="relative mx-auto transition-transform duration-300 hover:-translate-y-1.5"
+              style={{ boxShadow: "0 8px 30px rgba(0,0,0,0.4)" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.boxShadow =
+                  "0 14px 40px rgba(0,0,0,0.5)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.boxShadow =
+                  "0 8px 30px rgba(0,0,0,0.4)")
+              }
             >
-              {/* Screen bezel */}
-              <div className="rounded-2xl bg-[#1e1f26] p-3 pb-3">
+              {/* Top bezel (lid) */}
+              <div className="rounded-t-xl bg-[#2a2a2a] px-2.5 pt-2.5">
                 {/* Camera dot */}
                 <div className="flex justify-center pb-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#3a3b42]" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#555]" />
                 </div>
                 {/* Screen — locked to 16:10 laptop ratio */}
-                <div className="relative overflow-hidden rounded-lg bg-black aspect-[16/10]">
+                <div className="relative overflow-hidden rounded-[4px] bg-black aspect-[16/10]">
                   <Image
                     src={project.previewSrc}
                     alt={`${project.title} preview`}
@@ -134,19 +142,10 @@ export default function ProjectCard({
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
                 </div>
               </div>
-              {/* Laptop base */}
-              <div className="relative mx-auto w-[108%] -ml-[4%]">
-                <div
-                  className="h-4 rounded-b-2xl"
-                  style={{
-                    background: "linear-gradient(to bottom, #2e2f36, #393a42)",
-                  }}
-                />
-                {/* Notch indent */}
-                <div className="absolute left-1/2 top-0 h-1.5 w-20 -translate-x-1/2 rounded-b-lg bg-[#44454d]" />
-              </div>
-              {/* Bottom shadow ledge */}
-              <div className="mx-auto w-[70%] h-1 rounded-b-xl bg-[#2a2b32] opacity-60" />
+              {/* Hinge bar */}
+              <div className="h-3.5 bg-[#3a3a3a] rounded-b-lg" />
+              {/* Keyboard base */}
+              <div className="mx-auto w-[40%] h-1.5 bg-[#4a4a4a] rounded-b-md" />
 
               {/* Phone mockup — only shown when a mobile screenshot exists */}
               {project.mobileSrc && (

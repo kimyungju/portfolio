@@ -1,28 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "/experience/photo-1.svg",
-  "/experience/photo-2.svg",
-  "/experience/photo-3.svg",
-  "/experience/photo-4.svg",
+  "/experience/photo-1.jpeg",
+  "/experience/photo-2.jpeg",
+  "/experience/photo-3.jpeg",
+  "/experience/photo-4.png",
+  "/experience/photo-5.png",
 ];
+
+const AUTO_ADVANCE_MS = 4000;
 
 export default function ImageCarousel() {
   const [current, setCurrent] = useState(0);
 
+  const next = useCallback(
+    () => setCurrent((c) => (c === images.length - 1 ? 0 : c + 1)),
+    [],
+  );
   const prev = () =>
     setCurrent((c) => (c === 0 ? images.length - 1 : c - 1));
-  const next = () =>
-    setCurrent((c) => (c === images.length - 1 ? 0 : c + 1));
+
+  useEffect(() => {
+    const id = setInterval(next, AUTO_ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [current, next]);
 
   return (
-    <div className="relative mt-16">
+    <div className="relative mt-12 mx-auto max-w-lg sm:max-w-xl">
       {/* Image container */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card-bg">
+      <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-card-bg">
         <div
           className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0,1)]"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -32,8 +41,8 @@ export default function ImageCarousel() {
               <Image
                 src={src}
                 alt={`Experience photo ${i + 1}`}
-                width={1200}
-                height={675}
+                width={640}
+                height={480}
                 className="w-full"
               />
             </div>
@@ -44,11 +53,11 @@ export default function ImageCarousel() {
         <button
           onClick={prev}
           aria-label="Previous"
-          className="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-secondary/80 backdrop-blur-sm text-text-muted transition-all duration-300 hover:border-white/20 hover:text-primary"
+          className="absolute left-3 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-secondary/80 backdrop-blur-sm text-text-muted transition-all duration-300 hover:border-white/20 hover:text-primary"
         >
           <svg
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -62,11 +71,11 @@ export default function ImageCarousel() {
         <button
           onClick={next}
           aria-label="Next"
-          className="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-secondary/80 backdrop-blur-sm text-text-muted transition-all duration-300 hover:border-white/20 hover:text-primary"
+          className="absolute right-3 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-secondary/80 backdrop-blur-sm text-text-muted transition-all duration-300 hover:border-white/20 hover:text-primary"
         >
           <svg
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -80,7 +89,7 @@ export default function ImageCarousel() {
       </div>
 
       {/* Dot indicators */}
-      <div className="mt-6 flex justify-center gap-2">
+      <div className="mt-4 flex justify-center gap-2">
         {images.map((_, i) => (
           <button
             key={i}

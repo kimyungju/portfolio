@@ -14,6 +14,20 @@ export const experiences: ExperienceEntry[] = [
       "Achieved distinctions in Mathematics, Chemistry, Business, Economics, English, and Korean. Awarded IB Bilingual Diploma.",
   },
   {
+    year: "2021–2022",
+    title: "Double Honours in BBA & Economics",
+    organization: "National University of Singapore",
+    description:
+      "Foundational training in business administration and economics, with an emphasis on analytical thinking.",
+  },
+  {
+    year: "2022–2024",
+    title: "Signal & Computer Administration Specialist",
+    organization: "Republic of Korea Army, 35th Infantry Division HQ",
+    description:
+      "Served in the Command & Control Office at Division Headquarters, overseeing communication and information systems. Provided IT and radio network support to 120+ personnel, integrating digital and radio channels for real-time coordination. Maintained and troubleshot over 40 computer systems and network terminals.",
+  },
+  {
     year: "2024",
     title: "Transferred to Computer Science",
     organization: "National University of Singapore",
@@ -21,8 +35,8 @@ export const experiences: ExperienceEntry[] = [
       "Made an intentional pivot from Double Honours in BBA and Economics to Bachelor of Computing (Computer Science) to pursue technical specialization.",
   },
   {
-    year: "2025",
-    title: "Head of Technology",
+    year: "2025–2026",
+    title: "Technology Associate → Head of Technology",
     organization: "Developer Group @ NUS Computing",
     description:
       "Contributing to a student-led tech community with 2,300+ followers. Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",

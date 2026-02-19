@@ -3,6 +3,26 @@
 import { motion } from "framer-motion";
 import { ExperienceEntry } from "@/data/experience";
 
+function RoleTitle({ title }: { title: string }) {
+  if (!title.includes("→")) {
+    return <>{title}</>;
+  }
+
+  const roles = title.split("→").map((r) => r.trim());
+  return (
+    <span className="flex flex-col gap-2">
+      <span className="flex items-center gap-3 flex-wrap">
+        <span className="rounded-full border border-cyan/30 bg-cyan/[0.08] px-3 py-1 text-primary shadow-[0_0_12px_rgba(34,211,238,0.08)]">
+          {roles[1]}
+        </span>
+        <span className="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-sm text-text-muted/50">
+          {roles[0]}
+        </span>
+      </span>
+    </span>
+  );
+}
+
 export default function ExperienceTimeline({
   entries,
 }: {
@@ -40,7 +60,7 @@ export default function ExperienceTimeline({
             {/* Content */}
             <div className="pb-2">
               <h3 className="font-display text-base font-600 tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary md:text-lg">
-                {entry.title}
+                <RoleTitle title={entry.title} />
               </h3>
               <p className="mt-1 text-[13px] font-medium text-accent/80">
                 {entry.organization}

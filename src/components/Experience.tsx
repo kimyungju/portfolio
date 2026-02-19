@@ -29,7 +29,7 @@ export default function Experience() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-display text-4xl font-700 tracking-[-0.02em] md:text-5xl"
         >
-          Experience &amp; Awards
+          Experience
         </motion.h2>
         <motion.div
           initial={{ scaleX: 0 }}
