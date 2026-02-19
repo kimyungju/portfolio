@@ -37,7 +37,7 @@ export const experiences: ExperienceEntry[] = [
   {
     year: "2025–2026",
     title: "Technology Associate → Head of Technology",
-    organization: "Developer's Group @ NUS Computing",
+    organization: "Developer Group @ NUS Computing",
     description:
       "Contributing to a student-led tech community with 2,300+ followers. Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",
   },

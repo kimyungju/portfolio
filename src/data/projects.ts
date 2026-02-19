@@ -63,12 +63,13 @@ export const projects: Project[] = [
   {
     slug: "devg-website",
     number: "//4",
-    title: "DevG Website",
+    title: "Developer Group",
     description:
-      "The official website for Developer's Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
+      "The official website for Developer Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
     longDescription:
       "Designed and developed the organization website to improve visibility and outreach, supporting event promotion and community engagement.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://dg-nus.vercel.app/#/about",
     logoSrc: "/projects/devg-logo.svg",
     previewSrc: "/projects/devg-preview.svg",
     readTime: "3 min read",
