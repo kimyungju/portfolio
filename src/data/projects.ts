@@ -75,7 +75,7 @@ export const projects: Project[] = [
     liveUrl: "https://dg-nus.vercel.app/#/about",
     githubUrl: "https://github.com/kimyungju/devg-website",
     logoSrc: "/projects/devg-logo.svg",
-    previewSrc: "/projects/devg-preview.svg",
+    previewSrc: "/projects/devg-preview.png",
     readTime: "3 min read",
     publishDate: "19 February 2026",
   },

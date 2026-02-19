@@ -178,8 +178,8 @@ export default function ProjectCard({
                   <div className="flex justify-center pb-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#555]" />
                   </div>
-                  {/* Screen — locked to 16:10 laptop ratio */}
-                  <div className="relative overflow-hidden rounded-[4px] bg-black aspect-[16/10]">
+                  {/* Screen — 2:1 to match screenshot aspect ratios */}
+                  <div className="relative overflow-hidden rounded-[4px] bg-black aspect-[2/1]">
                     <Image
                       src={project.previewSrc}
                       alt={`${project.title} preview`}
