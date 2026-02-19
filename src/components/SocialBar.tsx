@@ -36,7 +36,7 @@ export default function SocialBar() {
               style={{ color: color ?? "#d1d5db" }}
             />
           </span>
-          <span className="text-[11px] font-mono tracking-wide text-text-muted/0 group-hover:text-text-muted/80 transition-colors duration-200">
+          <span className="text-base font-mono tracking-wide text-text-muted/0 group-hover:text-text-muted/80 transition-colors duration-200">
             {label}
           </span>
         </a>
