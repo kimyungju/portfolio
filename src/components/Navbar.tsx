@@ -5,9 +5,9 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { label: "PROJECTS", href: "#projects" },
-  { label: "EXPERIENCE", href: "#experience" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "PROJECTS", href: "/#projects" },
+  { label: "EXPERIENCE", href: "/#experience" },
+  { label: "CONTACT", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <a href="#" className="group relative">
+          <a href="/" className="group relative">
             <Image src="/logo.svg" alt="YK" width={36} height={36} />
           </a>
 

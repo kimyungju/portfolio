@@ -9,6 +9,8 @@ export interface Project {
   githubUrl?: string;
   logoSrc: string;
   previewSrc: string;
+  readTime: string;
+  publishDate: string;
 }
 
 export const projects: Project[] = [
@@ -24,6 +26,8 @@ export const projects: Project[] = [
     liveUrl: "https://pricewise-ai-shop.vercel.app/",
     logoSrc: "/projects/pricewise-logo.svg",
     previewSrc: "/projects/pricewise-preview.svg",
+    readTime: "18 min read",
+    publishDate: "19 February 2026",
   },
   {
     slug: "interviewpilot",
@@ -37,6 +41,8 @@ export const projects: Project[] = [
     liveUrl: "https://interview-pilot-ace.vercel.app/",
     logoSrc: "/projects/interviewpilot-logo.svg",
     previewSrc: "/projects/interviewpilot-preview.svg",
+    readTime: "18 min read",
+    publishDate: "19 February 2026",
   },
   {
     slug: "castory",
@@ -50,6 +56,8 @@ export const projects: Project[] = [
     liveUrl: "https://castory-ai.vercel.app/",
     logoSrc: "/projects/castory-logo.svg",
     previewSrc: "/projects/castory-preview.svg",
+    readTime: "12 min read",
+    publishDate: "19 February 2026",
   },
   {
     slug: "devg-website",
@@ -62,5 +70,7 @@ export const projects: Project[] = [
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     logoSrc: "/projects/devg-logo.svg",
     previewSrc: "/projects/devg-preview.svg",
+    readTime: "3 min read",
+    publishDate: "19 February 2026",
   },
 ];
