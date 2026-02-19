@@ -22,31 +22,32 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
-      className="group relative mb-32 last:mb-0"
+      className="group relative mb-36 last:mb-0"
     >
-      {/* Number label — cyan split */}
-      <motion.span
+      {/* Number label */}
+      <motion.div
         initial={{ opacity: 0, x: -10 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-6 inline-block font-mono text-xs tracking-[0.3em]"
+        className="mb-8 font-mono text-lg tracking-[0.2em]"
       >
-        <span className="text-cyan">{"//"}</span>
-        <span className="text-cyan/70">
-          {project.number.replace("//", "")}
+        <span className="text-cyan font-bold">{"//"}</span>
+        <span className="ml-1 text-white font-bold">
+          {project.number.replace("//", "").trim()}
         </span>
-      </motion.span>
+      </motion.div>
 
       <div
-        className={`flex flex-col gap-10 ${
+        className={`flex flex-col gap-12 ${
           isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
         }`}
       >
-        {/* Info */}
-        <div className="flex flex-1 flex-col justify-center gap-5">
-          <div className="flex items-center gap-4">
-            <div className="relative h-11 w-11 overflow-hidden rounded-xl border border-white/[0.06] bg-card-bg">
+        {/* Info — takes ~45% */}
+        <div className="flex flex-1 flex-col justify-center gap-7 lg:max-w-[45%]">
+          {/* Logo + Title */}
+          <div className="flex items-center gap-5">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-white/[0.08] bg-card-bg">
               <Image
                 src={project.logoSrc}
                 alt={`${project.title} logo`}
@@ -54,29 +55,30 @@ export default function ProjectCard({
                 className="object-cover"
               />
             </div>
-            <h3 className="font-display text-2xl font-700 tracking-[-0.02em] md:text-3xl">
+            <h3 className="font-display text-3xl font-800 tracking-[-0.02em] md:text-4xl lg:text-[2.75rem]">
               {project.title}
             </h3>
           </div>
 
-          <p className="max-w-lg text-[15px] leading-[1.7] text-text-muted">
+          {/* Description */}
+          <p className="max-w-xl text-lg leading-[1.75] text-text-secondary md:text-xl">
             {project.description}
           </p>
 
-          {/* Tech badges — per-tech brand colors */}
-          <div className="flex flex-wrap gap-2">
+          {/* Tech badges */}
+          <div className="flex flex-wrap gap-2.5">
             {project.techStack.map((tech) => {
               const colors = techBrandColors[tech] ?? defaultBadgeColors;
               return (
                 <span
                   key={tech}
-                  className="rounded-full px-3 py-1 text-[11px] font-medium tracking-wide transition-all duration-200 hover:brightness-125"
+                  className="rounded-full px-4 py-1.5 text-sm font-medium tracking-wide transition-all duration-200 hover:brightness-125"
                   style={{
                     borderWidth: "1px",
                     borderStyle: "solid",
                     borderColor: colors.border,
                     color: colors.text,
-                    backgroundColor: colors.bg,
+                    backgroundColor: "transparent",
                   }}
                 >
                   {tech}
@@ -85,31 +87,31 @@ export default function ProjectCard({
             })}
           </div>
 
-          {/* Buttons — cyan + lavender */}
-          <div className="flex items-center gap-3 pt-2">
+          {/* Buttons */}
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-2.5 text-[13px] font-semibold text-secondary transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-8 py-3.5 text-[15px] font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
               >
-                <HiOutlineExternalLink size={15} />
+                <HiOutlineExternalLink size={18} />
                 View Project
               </a>
             )}
             <Link
               href={`/projects/${project.slug}`}
-              className="inline-flex items-center gap-2 rounded-full bg-lavender px-5 py-2.5 text-[13px] font-semibold text-secondary transition-all duration-300 hover:shadow-[0_0_20px_rgba(196,181,253,0.3)] hover:brightness-110"
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-8 py-3.5 text-[15px] font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
             >
-              <HiOutlineDocumentText size={15} />
+              <HiOutlineDocumentText size={18} />
               Read Full Story
             </Link>
           </div>
         </div>
 
-        {/* Preview image — colored hover glow */}
-        <div className="flex-1">
+        {/* Preview image — takes ~55% */}
+        <div className="flex-1 lg:max-w-[55%]">
           <div className="group/img relative overflow-hidden rounded-2xl border border-white/[0.06] bg-card-bg transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]">
             <Image
               src={project.previewSrc}

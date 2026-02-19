@@ -21,6 +21,7 @@ export const projects: Project[] = [
     longDescription:
       "Engineered a LangGraph agent with 10 orchestrated tools, dual-mode SSE streaming, persistent checkpointing via AsyncPostgresSaver, and conversation summarization with safe message splitting.",
     techStack: ["LangGraph", "FastAPI", "OpenAI", "Next.js", "PostgreSQL", "Docker"],
+    liveUrl: "https://pricewise-ai-shop.vercel.app/",
     logoSrc: "/projects/pricewise-logo.svg",
     previewSrc: "/projects/pricewise-preview.svg",
   },
@@ -33,6 +34,7 @@ export const projects: Project[] = [
     longDescription:
       "Implemented multi-turn conversational flow with AI-generated follow-up questions, fire-and-forget video upload pipeline with late URL patching, and cross-browser MediaRecorder MIME negotiation. Bilingual support (English/Korean) with dual TTS pipeline and CJK PDF export.",
     techStack: ["Next.js", "React", "TypeScript", "OpenAI", "Supabase", "Clerk"],
+    liveUrl: "https://interview-pilot-ace.vercel.app/",
     logoSrc: "/projects/interviewpilot-logo.svg",
     previewSrc: "/projects/interviewpilot-preview.svg",
   },
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     longDescription:
       "Implemented chunked TTS pipeline, persistent audio player, full-text search, draft auto-save, and dynamic user profiles with listener analytics.",
     techStack: ["Next.js", "React", "TypeScript", "Convex", "OpenAI", "Clerk"],
+    liveUrl: "https://castory-ai.vercel.app/",
     logoSrc: "/projects/castory-logo.svg",
     previewSrc: "/projects/castory-preview.svg",
   },
