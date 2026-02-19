@@ -71,6 +71,12 @@ body::before {
   background: #3a3a3a;
 }
 
+/* 21st.dev-style dot grid background */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 /* Marquee animation for TechStackStrip */
 @keyframes marquee {
   0% {

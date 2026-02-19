@@ -58,6 +58,16 @@ export default function Footer() {
         >
           Get In Touch
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mt-4 max-w-lg text-lg leading-relaxed text-text-muted"
+        >
+          Have a project in mind or just want to connect? I&apos;d love to hear
+          from you.
+        </motion.p>
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -78,9 +88,9 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
-              className="group flex items-center gap-3 rounded-xl border border-white/[0.04] bg-white/[0.01] px-4 py-4 transition-all duration-300 hover:border-white/[0.08] hover:bg-white/[0.03]"
+              className="group flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.025] px-5 py-5 transition-all duration-300 hover:border-cyan/20 hover:bg-white/[0.04] hover:shadow-[0_0_24px_rgba(34,211,238,0.06)]"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.04] text-text-muted transition-colors duration-300 group-hover:text-primary">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.06] text-text-muted transition-all duration-300 group-hover:bg-cyan/10 group-hover:text-cyan">
                 {link.icon}
               </span>
               <span className="text-[13px] font-medium text-text-muted transition-colors duration-300 group-hover:text-primary">
@@ -92,10 +102,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="flex items-center justify-between border-t border-white/[0.04] pt-8">
-          <p className="text-[12px] tracking-wider text-text-muted/40">
+          <p className="text-[12px] tracking-wider text-text-muted/60">
             &copy; 2026 Kim Yungju
           </p>
-          <p className="text-[12px] tracking-wider text-text-muted/30">
+          <p className="text-[12px] tracking-wider text-text-muted/40">
             Built with Next.js &amp; Tailwind CSS
           </p>
         </div>

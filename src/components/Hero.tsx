@@ -78,9 +78,12 @@ export default function Hero() {
       ref={heroRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
-      {/* Subtle radial glow behind headline */}
-      <div className="pointer-events-none absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-accent/[0.04] blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-1/4 right-0 h-[400px] w-[400px] rounded-full bg-accent-warm/[0.03] blur-[100px]" />
+      {/* Radial glow blobs */}
+      <div className="pointer-events-none absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-cyan/[0.07] blur-[140px]" />
+      <div className="pointer-events-none absolute bottom-1/4 right-0 h-[400px] w-[400px] rounded-full bg-purple/[0.05] blur-[120px]" />
+
+      {/* Dot grid pattern */}
+      <div className="dot-grid pointer-events-none absolute inset-0 opacity-60" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         {/* Name label — scramble re-triggers on scroll */}
