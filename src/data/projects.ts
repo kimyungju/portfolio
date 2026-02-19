@@ -21,8 +21,8 @@ export const projects: Project[] = [
     longDescription:
       "Engineered a LangGraph agent with 10 orchestrated tools, dual-mode SSE streaming, persistent checkpointing via AsyncPostgresSaver, and conversation summarization with safe message splitting.",
     techStack: ["LangGraph", "FastAPI", "OpenAI", "Next.js", "PostgreSQL", "Docker"],
-    logoSrc: "/projects/pricewise-logo.png",
-    previewSrc: "/projects/pricewise-preview.png",
+    logoSrc: "/projects/pricewise-logo.svg",
+    previewSrc: "/projects/pricewise-preview.svg",
   },
   {
     slug: "interviewpilot",
@@ -33,8 +33,8 @@ export const projects: Project[] = [
     longDescription:
       "Implemented multi-turn conversational flow with AI-generated follow-up questions, fire-and-forget video upload pipeline with late URL patching, and cross-browser MediaRecorder MIME negotiation. Bilingual support (English/Korean) with dual TTS pipeline and CJK PDF export.",
     techStack: ["Next.js", "React", "TypeScript", "OpenAI", "Supabase", "Clerk"],
-    logoSrc: "/projects/interviewpilot-logo.png",
-    previewSrc: "/projects/interviewpilot-preview.png",
+    logoSrc: "/projects/interviewpilot-logo.svg",
+    previewSrc: "/projects/interviewpilot-preview.svg",
   },
   {
     slug: "castory",
@@ -45,8 +45,8 @@ export const projects: Project[] = [
     longDescription:
       "Implemented chunked TTS pipeline, persistent audio player, full-text search, draft auto-save, and dynamic user profiles with listener analytics.",
     techStack: ["Next.js", "React", "TypeScript", "Convex", "OpenAI", "Clerk"],
-    logoSrc: "/projects/castory-logo.png",
-    previewSrc: "/projects/castory-preview.png",
+    logoSrc: "/projects/castory-logo.svg",
+    previewSrc: "/projects/castory-preview.svg",
   },
   {
     slug: "devg-website",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     longDescription:
       "Designed and developed the organization website to improve visibility and outreach, supporting event promotion and community engagement.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    logoSrc: "/projects/devg-logo.png",
-    previewSrc: "/projects/devg-preview.png",
+    logoSrc: "/projects/devg-logo.svg",
+    previewSrc: "/projects/devg-preview.svg",
   },
 ];
