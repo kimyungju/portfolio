@@ -44,7 +44,7 @@ export const experiences: ExperienceEntry[] = [
   {
     year: "2024–2026",
     title: "Developer Group @ NUS Computing",
-    organization: "Developer Group @ NUS Computing",
+    organization: "National University of Singapore",
     description: "",
     roles: [
       {
