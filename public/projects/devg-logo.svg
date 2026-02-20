@@ -1,4 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <circle cx="24" cy="24" r="24" fill="#10b981"/>
-  <text x="24" y="30" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="bold">D</text>
+  <defs>
+    <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <!-- Left angle bracket < -->
+  <path d="M14 14 L4 24 L14 34" stroke="url(#dg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Right angle bracket > -->
+  <path d="M34 14 L44 24 L34 34" stroke="url(#dg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Center person (head) -->
+  <circle cx="24" cy="18" r="4" fill="url(#dg)"/>
+  <!-- Center person (body) -->
+  <path d="M17 32 Q17 25 24 25 Q31 25 31 32" fill="url(#dg)"/>
+  <!-- Left small person (head) -->
+  <circle cx="17" cy="21" r="2.5" fill="#10b981" opacity="0.5"/>
+  <!-- Right small person (head) -->
+  <circle cx="31" cy="21" r="2.5" fill="#34d399" opacity="0.5"/>
 </svg>

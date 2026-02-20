@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Project } from "@/data/projects";
 import { techBrandColors, defaultBadgeColors } from "@/data/techBrandColors";
 import { HiOutlineExternalLink, HiOutlineDocumentText } from "react-icons/hi";
+import RevealText from "@/components/ui/RevealText";
 
 export default function ProjectCard({
   project,
@@ -30,7 +31,7 @@ export default function ProjectCard({
     <motion.article
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
       className="group relative mb-36 last:mb-0"
     >
@@ -38,7 +39,7 @@ export default function ProjectCard({
       <motion.div
         initial={{ opacity: 0, x: -10 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.4, delay: 0.1 }}
         className="mb-8 font-mono text-2xl tracking-[0.2em]"
       >
@@ -74,7 +75,7 @@ export default function ProjectCard({
           <motion.div
             initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{
               duration: 0.7,
               delay: 0.1,
@@ -92,9 +93,12 @@ export default function ProjectCard({
                   className="object-cover"
                 />
               </div>
-              <h3 className="font-display text-4xl font-800 tracking-[-0.02em] md:text-5xl lg:text-6xl">
-                {project.title}
-              </h3>
+              <RevealText
+                text={project.title}
+                overlayColor={project.overlayColor}
+                className="font-display text-4xl font-800 tracking-[-0.02em] md:text-5xl lg:text-6xl"
+                letterImages={project.letterImages}
+              />
             </div>
 
             {/* Description */}
@@ -151,7 +155,7 @@ export default function ProjectCard({
           <motion.div
             initial={{ opacity: 0, x: isReversed ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: false, amount: 0.3 }}
             transition={{
               duration: 0.7,
               delay: 0.25,
@@ -184,7 +188,7 @@ export default function ProjectCard({
                       src={project.previewSrc}
                       alt={`${project.title} preview`}
                       fill
-                      className="object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
+                      className="object-contain object-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
                     />
                     <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
                   </div>

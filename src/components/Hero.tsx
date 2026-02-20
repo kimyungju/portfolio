@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
 import TechStackStrip from "@/components/TechStackStrip";
+import { MorphingText } from "@/components/ui/morphing-text";
 
 const SCRAMBLE_CHARS = "@#$%&!?*^~+=";
 
@@ -67,22 +68,11 @@ function useTextScramble(
   return { displayed, done };
 }
 
-const TITLES = ["Software Engineer.", "Cyber Security Engineer."];
-
 export default function Hero() {
   const heroRef = useRef(null);
   const inView = useInView(heroRef, { once: false, amount: 0.3 });
 
   const name = useTextScramble("YUNGJU KIM", 100, 1500, inView);
-
-  const [titleIndex, setTitleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % TITLES.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
@@ -102,23 +92,11 @@ export default function Hero() {
           {name.displayed || "\u00A0"}
         </p>
 
-        {/* Headline — rotating titles */}
-        <h1 className="font-display text-[clamp(1.8rem,5.5vw,5rem)] font-800 leading-[0.95] tracking-[-0.03em]">
-          <span className="relative block overflow-hidden h-[1em]">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={TITLES[titleIndex]}
-                initial={{ y: 150, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -150, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 50 }}
-                className="absolute inset-x-0 whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-primary via-text-secondary to-text-muted"
-              >
-                {TITLES[titleIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </span>
-        </h1>
+        {/* Headline — morphing titles */}
+        <MorphingText
+          texts={["Software Engineer.", "Cyber Security Engineer."]}
+          className="h-[1.1em] max-w-none text-left font-display text-[clamp(1.8rem,5.5vw,5rem)] font-800 leading-[0.95] tracking-[-0.03em] text-primary"
+        />
 
         {/* Tagline */}
         <motion.p

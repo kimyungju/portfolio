@@ -42,7 +42,7 @@ export const experiences: ExperienceEntry[] = [
       "Made an intentional pivot from Double Honours in BBA and Economics to Bachelor of Computing (Computer Science) to pursue technical specialization.",
   },
   {
-    year: "2024–2026",
+    year: "2025–2026",
     title: "Developer Group @ NUS Computing",
     organization: "National University of Singapore",
     description: "",

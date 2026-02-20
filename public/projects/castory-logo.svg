@@ -1,4 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <circle cx="24" cy="24" r="24" fill="#f59e0b"/>
-  <text x="24" y="30" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="22" font-weight="bold">C</text>
+  <defs>
+    <linearGradient id="ca" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <!-- Microphone body -->
+  <rect x="17" y="4" width="14" height="22" rx="7" fill="url(#ca)"/>
+  <!-- Mic cradle arc -->
+  <path d="M12 22 Q12 36 24 36 Q36 36 36 22" stroke="url(#ca)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Mic stand -->
+  <line x1="24" y1="36" x2="24" y2="42" stroke="url(#ca)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Stand base -->
+  <line x1="17" y1="42" x2="31" y2="42" stroke="url(#ca)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Sound wave arcs -->
+  <path d="M38 10 Q44 18 38 26" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M42 7 Q50 18 42 29" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
 </svg>
