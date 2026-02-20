@@ -9,7 +9,6 @@ const images = [
   "/experience/photo-3.jpeg",
   "/experience/lumcloon-energy-leu-1.png",
   "/experience/lumcloon-energy-leu-2.png",
-  "/experience/army-it.jpg",
 ];
 
 const AUTO_ADVANCE_MS = 4000;
