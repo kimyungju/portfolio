@@ -49,13 +49,13 @@ export const experiences: ExperienceEntry[] = [
     roles: [
       {
         title: "Head of Technology",
-        period: "2025 – 2026",
+        period: "2026",
         description:
           "Designed the organization website and organized Hack4Good 2026, a flagship hackathon for non-profit organizations.",
       },
       {
         title: "Technology Associate",
-        period: "2024 – 2025",
+        period: "2025",
         description:
           "Contributed to a student-led tech community with 2,300+ followers.",
       },
