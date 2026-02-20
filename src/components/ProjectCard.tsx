@@ -188,7 +188,7 @@ export default function ProjectCard({
                       src={project.previewSrc}
                       alt={`${project.title} preview`}
                       fill
-                      className="object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
+                      className="object-cover object-left-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
                     />
                     <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
                   </div>
