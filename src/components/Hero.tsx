@@ -72,7 +72,7 @@ export default function Hero() {
   const heroRef = useRef(null);
   const inView = useInView(heroRef, { once: false, amount: 0.3 });
 
-  const name = useTextScramble("YUNGJU KIM", 100, 1500, inView);
+  const name = useTextScramble("KIM YUNGJU", 100, 1500, inView);
 
   return (
     <section

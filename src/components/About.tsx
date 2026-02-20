@@ -49,7 +49,7 @@ export default function About() {
             <div className="relative h-full min-h-[380px] overflow-hidden rounded-2xl border border-white/[0.06]">
               <Image
                 src="/profile.jpg"
-                alt="Yungju Kim"
+                alt="Kim Yungju"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-[1.03]"
               />

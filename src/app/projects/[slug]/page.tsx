@@ -28,7 +28,7 @@ export async function generateMetadata({
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `The Dev's Story Behind ${project.title} | Yungju Kim`,
+    title: `The Dev's Story Behind ${project.title} | Kim Yungju`,
     description: project.description,
   };
 }
