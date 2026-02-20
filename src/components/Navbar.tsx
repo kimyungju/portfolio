@@ -39,7 +39,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6">
+        <div className="mx-auto flex max-w-[90rem] items-center justify-between px-4 py-6 md:px-8 lg:px-12">
           <a href="/" className="group relative">
             <Image src="/logo.svg" alt="YK" width={52} height={52} />
           </a>
