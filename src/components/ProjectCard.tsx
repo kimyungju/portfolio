@@ -115,7 +115,7 @@ export default function ProjectCard({
                     key={tech}
                     className="rounded-full px-6 py-2.5 text-lg font-medium tracking-wide transition-all duration-200 hover:brightness-125"
                     style={{
-                      borderWidth: "1px",
+                      borderWidth: "2px",
                       borderStyle: "solid",
                       borderColor: colors.border,
                       color: colors.text,
