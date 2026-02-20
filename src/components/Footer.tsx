@@ -77,7 +77,7 @@ export default function Footer() {
         />
 
         {/* Contact links */}
-        <div className="mb-20 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {contactLinks.map((link, i) => (
             <motion.a
               key={link.label}

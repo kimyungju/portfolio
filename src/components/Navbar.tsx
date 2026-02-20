@@ -45,7 +45,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop */}
-          <div className="hidden items-center gap-14 md:flex">
+          <div className="hidden items-center gap-14 lg:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -66,7 +66,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[6px] md:hidden"
+            className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-[6px] lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -92,7 +92,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-secondary/98 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-secondary/98 backdrop-blur-2xl lg:hidden"
           >
             {NAV_LINKS.map((link, i) => (
               <motion.a
