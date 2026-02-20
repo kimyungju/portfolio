@@ -26,25 +26,27 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function TechStackStrip() {
-  const duplicated = [...techStack, ...techStack];
-
   return (
     <div className="marquee-mask marquee-container overflow-hidden">
-      <div className="animate-marquee flex w-max gap-6">
-        {duplicated.map((tech, i) => (
-          <div
-            key={`${tech.iconSlug}-${i}`}
-            className="flex items-center gap-4 rounded-full border border-white/[0.15] bg-white/[0.08] px-6 py-3 transition-all duration-300 hover:border-white/[0.3] hover:bg-white/[0.12]"
-            style={{ boxShadow: '0 0 12px rgba(255,255,255,0.05)' }}
-          >
-            <span style={{ color: tech.brandColor }}>
-              {iconMap[tech.iconSlug] ?? tech.name}
-            </span>
-            <span
-              className="text-lg font-medium whitespace-nowrap text-[#e5e5e5]"
-            >
-              {tech.name}
-            </span>
+      <div className="animate-marquee flex">
+        {[0, 1].map((copy) => (
+          <div key={copy} className="flex shrink-0 gap-6 pr-6">
+            {techStack.map((tech) => (
+              <div
+                key={`${tech.iconSlug}-${copy}`}
+                className="flex items-center gap-4 rounded-full border border-white/[0.15] bg-white/[0.08] px-6 py-3 transition-all duration-300 hover:border-white/[0.3] hover:bg-white/[0.12]"
+                style={{ boxShadow: '0 0 12px rgba(255,255,255,0.05)' }}
+              >
+                <span style={{ color: tech.brandColor }}>
+                  {iconMap[tech.iconSlug] ?? tech.name}
+                </span>
+                <span
+                  className="text-lg font-medium whitespace-nowrap text-[#e5e5e5]"
+                >
+                  {tech.name}
+                </span>
+              </div>
+            ))}
           </div>
         ))}
       </div>
