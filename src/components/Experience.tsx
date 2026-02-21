@@ -43,7 +43,7 @@ export default function Experience() {
           <div className="flex-1 min-w-0">
             <ExperienceTimeline entries={experiences} />
           </div>
-          <div className="lg:w-[420px] lg:shrink-0">
+          <div className="lg:w-[370px] lg:shrink-0">
             <div className="lg:sticky lg:top-32">
               <ImageCarousel />
             </div>

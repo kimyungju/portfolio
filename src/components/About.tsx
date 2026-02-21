@@ -44,14 +44,14 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
-            className="shrink-0 lg:w-[380px]"
+            className="shrink-0 lg:w-[340px]"
           >
-            <div className="relative h-full min-h-[380px] overflow-hidden rounded-2xl border border-white/[0.06]">
+            <div className="relative h-full min-h-[340px] overflow-hidden rounded-2xl border border-white/[0.06]">
               <Image
                 src="/profile.jpg"
                 alt="Kim Yungju"
                 fill
-                sizes="(max-width: 1024px) 100vw, 380px"
+                sizes="(max-width: 1024px) 100vw, 340px"
                 className="object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />

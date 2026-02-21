@@ -42,7 +42,7 @@ export default function ExperienceTimeline({
   return (
     <div className="relative">
       {/* Continuous vertical line */}
-      <div className="absolute left-[104px] top-2 bottom-2 w-px bg-gradient-to-b from-white/10 via-white/[0.06] to-transparent md:left-[120px]" />
+      <div className="absolute left-[91px] top-2 bottom-2 w-px bg-gradient-to-b from-white/10 via-white/[0.06] to-transparent md:left-[105px]" />
 
       <div className="space-y-14">
         {entries.map((entry, i) => (
