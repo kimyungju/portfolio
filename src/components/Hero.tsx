@@ -95,7 +95,7 @@ export default function Hero() {
         {/* Headline — morphing titles */}
         <MorphingText
           texts={["Software Engineer.", "Cyber Security Engineer."]}
-          className="h-[1.1em] max-w-none text-left font-display text-[clamp(1.2rem,4.5vw,4.2rem)] font-800 leading-[0.95] tracking-[-0.03em] text-primary"
+          className="h-[1.1em] max-w-none text-left font-display text-[clamp(1.8rem,4.5vw,4.2rem)] font-800 leading-[0.95] tracking-[-0.03em] text-primary"
         />
 
         {/* Tagline */}
