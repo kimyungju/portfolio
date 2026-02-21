@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.message' | xargs -I{} node scripts/notify.js \"{}\" info"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:notify": "npm run build && node scripts/notify.js \"Build succeeded\" success || node scripts/notify.js \"Build failed\" error",
+    "lint:notify": "npm run lint && node scripts/notify.js \"Lint passed\" success || node scripts/notify.js \"Lint failed\" error"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -24,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "node-notifier": "^10.0.1",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
