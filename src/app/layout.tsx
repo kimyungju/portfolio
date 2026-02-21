@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kim Yungju | Aspiring Software Engineer",
+  title: "Kim Yungju | Software Engineer",
   description:
     "Personal portfolio of Kim Yungju — CS student at NUS, building AI-powered full-stack applications.",
 };
