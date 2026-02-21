@@ -51,6 +51,7 @@ export default function About() {
                 src="/profile.jpg"
                 alt="Kim Yungju"
                 fill
+                sizes="(max-width: 1024px) 100vw, 380px"
                 className="object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />

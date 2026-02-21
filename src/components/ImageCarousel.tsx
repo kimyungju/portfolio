@@ -42,6 +42,7 @@ export default function ImageCarousel() {
                 src={src}
                 alt={`Experience photo ${i + 1}`}
                 fill
+                sizes="(max-width: 640px) 100vw, 672px"
                 className="object-contain"
               />
             </div>
