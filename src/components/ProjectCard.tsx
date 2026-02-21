@@ -183,14 +183,14 @@ export default function ProjectCard({
                   <div className="flex justify-center pb-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#555]" />
                   </div>
-                  {/* Screen — 16:10 laptop ratio */}
-                  <div className="relative overflow-hidden rounded-[4px] bg-black aspect-[16/10]">
+                  {/* Screen — 2:1 laptop ratio */}
+                  <div className="relative overflow-hidden rounded-[4px] bg-black aspect-[2/1]">
                     <Image
                       src={project.previewSrc}
                       alt={`${project.title} preview`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover object-left-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
+                      className="object-cover transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
                     />
                     <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/img:opacity-100 bg-gradient-to-t from-cyan/[0.10] via-teal/[0.04] to-transparent" />
                   </div>
