@@ -13,16 +13,16 @@ import {
 import { FaJava } from "react-icons/fa";
 
 const iconMap: Record<string, React.ReactNode> = {
-  javascript: <SiJavascript size={40} />,
-  java: <FaJava size={40} />,
-  python: <SiPython size={40} />,
-  cplusplus: <SiCplusplus size={40} />,
-  nextdotjs: <SiNextdotjs size={40} />,
-  react: <SiReact size={40} />,
-  typescript: <SiTypescript size={40} />,
-  postgresql: <SiPostgresql size={40} />,
-  docker: <SiDocker size={40} />,
-  tailwindcss: <SiTailwindcss size={40} />,
+  javascript: <SiJavascript className="h-6 w-6 md:h-10 md:w-10" />,
+  java: <FaJava className="h-6 w-6 md:h-10 md:w-10" />,
+  python: <SiPython className="h-6 w-6 md:h-10 md:w-10" />,
+  cplusplus: <SiCplusplus className="h-6 w-6 md:h-10 md:w-10" />,
+  nextdotjs: <SiNextdotjs className="h-6 w-6 md:h-10 md:w-10" />,
+  react: <SiReact className="h-6 w-6 md:h-10 md:w-10" />,
+  typescript: <SiTypescript className="h-6 w-6 md:h-10 md:w-10" />,
+  postgresql: <SiPostgresql className="h-6 w-6 md:h-10 md:w-10" />,
+  docker: <SiDocker className="h-6 w-6 md:h-10 md:w-10" />,
+  tailwindcss: <SiTailwindcss className="h-6 w-6 md:h-10 md:w-10" />,
 };
 
 export default function TechStackStrip() {
@@ -30,18 +30,18 @@ export default function TechStackStrip() {
     <div className="marquee-mask marquee-container overflow-hidden">
       <div className="animate-marquee flex">
         {[0, 1].map((copy) => (
-          <div key={copy} className="flex shrink-0 gap-6 pr-6">
+          <div key={copy} className="flex shrink-0 gap-3 pr-3 md:gap-6 md:pr-6">
             {techStack.map((tech) => (
               <div
                 key={`${tech.iconSlug}-${copy}`}
-                className="flex items-center gap-4 rounded-full border border-white/[0.15] bg-white/[0.08] px-6 py-3 transition-all duration-300 hover:border-white/[0.3] hover:bg-white/[0.12]"
+                className="flex items-center gap-2 md:gap-4 rounded-full border border-white/[0.15] bg-white/[0.08] px-3 py-1.5 md:px-6 md:py-3 transition-all duration-300 hover:border-white/[0.3] hover:bg-white/[0.12]"
                 style={{ boxShadow: '0 0 12px rgba(255,255,255,0.05)' }}
               >
                 <span style={{ color: tech.brandColor }}>
                   {iconMap[tech.iconSlug] ?? tech.name}
                 </span>
                 <span
-                  className="text-lg font-medium whitespace-nowrap text-[#e5e5e5]"
+                  className="text-xs md:text-lg font-medium whitespace-nowrap text-[#e5e5e5]"
                 >
                   {tech.name}
                 </span>

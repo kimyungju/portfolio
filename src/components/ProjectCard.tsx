@@ -33,7 +33,7 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
-      className="group relative mb-36 last:mb-0"
+      className="group relative mb-20 md:mb-36 last:mb-0"
     >
       {/* Number label */}
       <motion.div
@@ -114,7 +114,7 @@ export default function ProjectCard({
                 return (
                   <span
                     key={tech}
-                    className="rounded-full px-6 py-2.5 text-lg font-medium tracking-wide transition-all duration-200 hover:brightness-125"
+                    className="rounded-full px-3 py-1 text-xs md:px-6 md:py-2.5 md:text-lg font-medium tracking-wide transition-all duration-200 hover:brightness-125"
                     style={{
                       borderWidth: "2px",
                       borderStyle: "solid",
@@ -136,7 +136,7 @@ export default function ProjectCard({
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-10 py-4 text-xl font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-cyan px-5 py-2.5 text-sm md:px-10 md:py-4 md:text-xl font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:brightness-110"
                 >
                   <HiOutlineExternalLink size={22} />
                   View Project
@@ -144,7 +144,7 @@ export default function ProjectCard({
               )}
               <Link
                 href={`/projects/${project.slug}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-10 py-4 text-xl font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
+                className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-lavender/90 px-5 py-2.5 text-sm md:px-10 md:py-4 md:text-xl font-bold text-secondary transition-all duration-300 hover:shadow-[0_0_24px_rgba(196,181,253,0.3)] hover:brightness-110"
               >
                 <HiOutlineDocumentText size={22} />
                 Read Full Story

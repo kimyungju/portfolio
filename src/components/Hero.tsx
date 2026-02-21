@@ -88,14 +88,14 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 md:px-8 lg:px-12">
         {/* Name label — scramble re-triggers on scroll */}
-        <p className="mb-6 font-mono text-[clamp(2.4rem,4.9vw,4.2rem)] tracking-[0.2em] font-bold text-text-muted leading-none">
+        <p className="mb-6 font-mono text-[clamp(1.6rem,4.9vw,4.2rem)] tracking-[0.2em] font-bold text-text-muted leading-none">
           {name.displayed || "\u00A0"}
         </p>
 
         {/* Headline — morphing titles */}
         <MorphingText
           texts={["Software Engineer.", "Cyber Security Engineer."]}
-          className="h-[1.1em] max-w-none text-left font-display text-[clamp(1.5rem,4.5vw,4.2rem)] font-800 leading-[0.95] tracking-[-0.03em] text-primary"
+          className="h-[1.1em] max-w-none text-left font-display text-[clamp(1.2rem,4.5vw,4.2rem)] font-800 leading-[0.95] tracking-[-0.03em] text-primary"
         />
 
         {/* Tagline */}

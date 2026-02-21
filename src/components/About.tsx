@@ -46,7 +46,7 @@ export default function About() {
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
             className="shrink-0 lg:w-[320px]"
           >
-            <div className="relative h-full min-h-[320px] overflow-hidden rounded-2xl border border-white/[0.06]">
+            <div className="relative h-full min-h-[240px] md:min-h-[320px] overflow-hidden rounded-2xl border border-white/[0.06]">
               <Image
                 src="/profile.jpg"
                 alt="Kim Yungju"
