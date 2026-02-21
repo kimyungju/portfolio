@@ -9,6 +9,13 @@ import { techBrandColors, defaultBadgeColors } from "@/data/techBrandColors";
 import { HiOutlineExternalLink, HiOutlineDocumentText } from "react-icons/hi";
 import RevealText from "@/components/ui/RevealText";
 
+const screenRatios: Record<string, string> = {
+  castory: "2845/1412",
+  pricewise: "2874/1448",
+  interviewpilot: "1920/985",
+  "devg-website": "1920/983",
+};
+
 export default function ProjectCard({
   project,
   index,
@@ -183,8 +190,11 @@ export default function ProjectCard({
                   <div className="flex justify-center pb-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#555]" />
                   </div>
-                  {/* Screen — 2:1 laptop ratio */}
-                  <div className="relative overflow-hidden rounded-[4px] bg-black aspect-[2/1]">
+                  {/* Screen — matches each project's screenshot ratio */}
+                  <div
+                    className="relative overflow-hidden rounded-[4px] bg-black"
+                    style={{ aspectRatio: screenRatios[project.slug] || "2/1" }}
+                  >
                     <Image
                       src={project.previewSrc}
                       alt={`${project.title} preview`}
