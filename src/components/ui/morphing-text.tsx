@@ -110,7 +110,7 @@ const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
 };
 
 const SvgFilters: React.FC = () => (
-  <svg id="filters" className="hidden" preserveAspectRatio="xMidYMid slice">
+  <svg className="absolute h-0 w-0 overflow-hidden" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <defs>
       <filter id="threshold">
         <feColorMatrix
@@ -129,9 +129,10 @@ const SvgFilters: React.FC = () => (
 const MorphingText: React.FC<MorphingTextProps> = ({ texts, className }) => (
   <div
     className={cn(
-      "relative mx-auto h-10 w-full max-w-screen-md text-center font-sans text-[20pt] font-bold leading-none [filter:url(#threshold)_blur(0.6px)] md:h-24 md:text-[40pt] lg:text-[6rem]",
+      "relative mx-auto h-10 w-full max-w-screen-md text-center font-sans text-[20pt] font-bold leading-none will-change-[filter] [filter:url(#threshold)_blur(0.6px)] md:h-24 md:text-[40pt] lg:text-[6rem]",
       className,
     )}
+    style={{ WebkitFilter: "url(#threshold) blur(0.6px)" }}
   >
     <Texts texts={texts} />
     <SvgFilters />
