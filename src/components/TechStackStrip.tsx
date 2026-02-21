@@ -13,16 +13,16 @@ import {
 import { FaJava } from "react-icons/fa";
 
 const iconMap: Record<string, React.ReactNode> = {
-  javascript: <SiJavascript size={42} />,
-  java: <FaJava size={42} />,
-  python: <SiPython size={42} />,
-  cplusplus: <SiCplusplus size={42} />,
-  nextdotjs: <SiNextdotjs size={42} />,
-  react: <SiReact size={42} />,
-  typescript: <SiTypescript size={42} />,
-  postgresql: <SiPostgresql size={42} />,
-  docker: <SiDocker size={42} />,
-  tailwindcss: <SiTailwindcss size={42} />,
+  javascript: <SiJavascript size={40} />,
+  java: <FaJava size={40} />,
+  python: <SiPython size={40} />,
+  cplusplus: <SiCplusplus size={40} />,
+  nextdotjs: <SiNextdotjs size={40} />,
+  react: <SiReact size={40} />,
+  typescript: <SiTypescript size={40} />,
+  postgresql: <SiPostgresql size={40} />,
+  docker: <SiDocker size={40} />,
+  tailwindcss: <SiTailwindcss size={40} />,
 };
 
 export default function TechStackStrip() {
