@@ -42,6 +42,13 @@ export const experiences: ExperienceEntry[] = [
       "Made an intentional pivot from Double Honours in BBA and Economics to Bachelor of Computing (Computer Science) to pursue technical specialization.",
   },
   {
+    year: "2025",
+    title: "Software Engineer Intern",
+    organization: "Real Coaching",
+    description:
+      "Built a client management dashboard with Next.js, PostgreSQL, and Shadcn UI, replacing manual spreadsheet tracking and reducing admin overhead by 30%.",
+  },
+  {
     year: "2025–2026",
     title: "Developer Group @ NUS Computing",
     organization: "National University of Singapore",
