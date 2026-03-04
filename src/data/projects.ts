@@ -18,33 +18,8 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "pricewise",
-    number: "//1",
-    title: "PriceWise",
-    description:
-      "An autonomous AI shopping agent that compares prices and reviews across retailers, delivering structured receipts via a conversational interface with selective human-in-the-loop approval.",
-    longDescription:
-      "Engineered a LangGraph agent with 10 orchestrated tools, dual-mode SSE streaming, persistent checkpointing via AsyncPostgresSaver, and conversation summarization with safe message splitting.",
-    techStack: ["LangGraph", "FastAPI", "OpenAI", "Next.js", "PostgreSQL", "Docker"],
-    liveUrl: "https://pricewise-ai-shop.vercel.app/",
-    githubUrl: "https://github.com/kimyungju/pricewise",
-    logoSrc: "/projects/pricewise-logo.svg",
-    previewSrc: "/projects/pricewise-preview.png",
-    readTime: "5 min read",
-    publishDate: "19 February 2026",
-    overlayColor: "#22d3ee",
-    letterImages: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&h=200&fit=crop",
-    ],
-  },
-  {
     slug: "interviewpilot",
-    number: "//2",
+    number: "//1",
     title: "InterviewPilot",
     description:
       "A full-stack mock interview platform that generates role-tailored questions, conducts speech-based interviews with webcam recording, and delivers AI-scored feedback.",
@@ -65,6 +40,31 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=200&h=200&fit=crop",
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop",
       "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=200&h=200&fit=crop",
+    ],
+  },
+  {
+    slug: "pricewise",
+    number: "//2",
+    title: "PriceWise",
+    description:
+      "An autonomous AI shopping agent that compares prices and reviews across retailers, delivering structured receipts via a conversational interface with selective human-in-the-loop approval.",
+    longDescription:
+      "Engineered a LangGraph agent with 10 orchestrated tools, dual-mode SSE streaming, persistent checkpointing via AsyncPostgresSaver, and conversation summarization with safe message splitting.",
+    techStack: ["LangGraph", "FastAPI", "OpenAI", "Next.js", "PostgreSQL", "Docker"],
+    liveUrl: "https://pricewise-ai-shop.vercel.app/",
+    githubUrl: "https://github.com/kimyungju/pricewise",
+    logoSrc: "/projects/pricewise-logo.svg",
+    previewSrc: "/projects/pricewise-preview.png",
+    readTime: "5 min read",
+    publishDate: "19 February 2026",
+    overlayColor: "#22d3ee",
+    letterImages: [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&h=200&fit=crop",
     ],
   },
   {
