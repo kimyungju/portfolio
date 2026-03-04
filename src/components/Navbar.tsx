@@ -41,7 +41,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-[90rem] items-center justify-between px-4 py-6 md:px-8 lg:px-12">
           <a href="/" className="group relative">
-            <Image src="/logo.svg" alt="YK" width={44} height={44} />
+            <Image src="/logo.svg" alt="YJ" width={44} height={44} />
           </a>
 
           {/* Desktop */}

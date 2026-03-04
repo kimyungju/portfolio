@@ -30,7 +30,7 @@ export default function StorySidebar() {
         className="fixed top-0 left-0 z-50 hidden h-screen w-[68px] flex-col items-center py-8 md:flex"
       >
         <a href="/">
-          <Image src="/logo.svg" alt="YK" width={32} height={32} />
+          <Image src="/logo.svg" alt="YJ" width={32} height={32} />
         </a>
 
         <div className="flex flex-1 flex-col items-center justify-center gap-12">
@@ -54,7 +54,7 @@ export default function StorySidebar() {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:hidden"
       >
         <a href="/">
-          <Image src="/logo.svg" alt="YK" width={32} height={32} />
+          <Image src="/logo.svg" alt="YJ" width={32} height={32} />
         </a>
 
         <button
