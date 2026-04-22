@@ -109,7 +109,7 @@ export default function About() {
         </div>
 
         {/* Button centered under photo */}
-        <div className="mt-6 flex justify-center lg:w-[380px]">
+        <div className="mt-6 flex justify-center lg:w-[320px]">
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-base font-semibold text-secondary transition-all duration-300 hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)]"
