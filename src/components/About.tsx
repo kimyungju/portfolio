@@ -98,11 +98,12 @@ export default function About() {
               Lumpur and studying in Singapore. Beyond full-stack development,
               I&apos;m drawn to{" "}
               <strong className="font-semibold text-primary">
-                software engineering and cybersecurity
+                software engineering and AI engineering
               </strong>
-              , aiming to build systems that are both powerful and secure.
-              When I&apos;m not coding, I&apos;m contributing to the developer
-              community at NUS as Head of Technology at Developer Group.
+              , aiming to build systems that are both powerful and intelligent.
+              When I&apos;m not coding, I&apos;m swimming or contributing to
+              the developer community at NUS as Head of Technology at Developer
+              Group.
             </p>
           </motion.div>
         </div>
