@@ -101,9 +101,8 @@ export default function About() {
                 software engineering and AI engineering
               </strong>
               , aiming to build systems that are both powerful and intelligent.
-              When I&apos;m not coding, I&apos;m swimming or contributing to
-              the developer community at NUS as Head of Technology at Developer
-              Group.
+              Outside of coding, I serve as Head of Technology at NUS Developer
+              Group, and I unwind in the pool.
             </p>
           </motion.div>
         </div>
