@@ -55,13 +55,6 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              download="Kim Yungju - Resume"
-              className="rounded-full border border-white/10 bg-white/[0.03] px-7 py-3 text-lg font-medium tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-primary"
-            >
-              Download CV
-            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -108,17 +101,6 @@ export default function Navbar() {
                 {link.label}
               </motion.a>
             ))}
-            <motion.a
-              href="/resume.pdf"
-              download="Kim Yungju - Resume"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ delay: 0.25, duration: 0.3 }}
-              className="mt-4 rounded-full border border-white/10 px-6 py-3 text-sm tracking-[0.15em] text-text-secondary transition-colors hover:text-primary"
-            >
-              Download CV
-            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
