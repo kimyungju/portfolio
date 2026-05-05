@@ -22,6 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kimyungju.com"),
   title: "Kim Yungju | AI Engineer",
   description:
     "Personal portfolio of Kim Yungju — CS student at NUS, building AI-powered full-stack applications.",
