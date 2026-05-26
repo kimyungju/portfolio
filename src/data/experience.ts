@@ -21,25 +21,11 @@ export const experiences: ExperienceEntry[] = [
       "Achieved distinctions in Mathematics, Chemistry, Business, Economics, English, and Korean. Awarded IB Bilingual Diploma.",
   },
   {
-    year: "2021–2022",
-    title: "Double Honours in BBA & Economics",
-    organization: "National University of Singapore",
-    description:
-      "Foundational training in business administration and economics, with an emphasis on analytical thinking.",
-  },
-  {
     year: "2022–2024",
     title: "Signal & Computer Administration Specialist",
     organization: "Republic of Korea Army, 35th Infantry Division HQ",
     description:
       "Managed IT and communication systems at Division HQ, supporting 120+ personnel. Maintained 40+ computer systems and network terminals.",
-  },
-  {
-    year: "2024",
-    title: "Transferred to Computer Science",
-    organization: "National University of Singapore",
-    description:
-      "Made an intentional pivot from Double Honours in BBA and Economics to Bachelor of Computing (Computer Science) to pursue technical specialization.",
   },
   {
     year: "2025–2026",
@@ -67,5 +53,19 @@ export const experiences: ExperienceEntry[] = [
     organization: "Lumcloon Energy",
     description:
       "Authored a 46-page internal assessment on Ireland's LEU framework. Modeled grid capacity constraints for hyperscale deployment and identified a 73MW capacity deficit.",
+  },
+  {
+    year: "2026",
+    title: "Software Engineer Intern",
+    organization: "Open Government Products",
+    description:
+      "Building and maintaining FormSG, Singapore's open-source form builder used by government agencies to collect data securely from citizens. Contributing to a product that processes millions of responses across public sector workflows.",
+  },
+  {
+    year: "2026",
+    title: "AI Engineer Intern",
+    organization: "Keppel Ltd.",
+    description:
+      "Developing AI integrations for enterprise applications, working across SAP and internal systems to automate and enhance business workflows.",
   },
 ];
