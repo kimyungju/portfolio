@@ -56,7 +56,14 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     year: "2026",
-    title: "Software Engineer Intern",
+    title: "Open Source Developer",
+    organization: "Mojaloop Foundation",
+    description:
+      "Strengthening Mojaloop, an open-source real-time payments platform driving financial inclusion across emerging economies. Closing FSPIOP API test-coverage gaps in the Platform Quality & Security workstream.",
+  },
+  {
+    year: "2026",
+    title: "Open Source Developer",
     organization: "Open Government Products",
     description:
       "Building and maintaining FormSG, Singapore's open-source form builder used by government agencies to collect data securely from citizens. Contributing to a product that processes millions of responses across public sector workflows.",
