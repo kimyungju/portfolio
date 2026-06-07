@@ -117,6 +117,35 @@ export default function ImageCarousel() {
 
   const goTo = useCallback((index: number) => moveTo(index + 1), [moveTo]);
 
+  // Restart the auto-advance countdown from zero. Called on every manual
+  // interaction so a click never lands right before a pending tick fires —
+  // otherwise a fixed wall-clock interval could advance again milliseconds
+  // after the user navigated. window.setInterval is required for the DOM
+  // overload's number return type (bare setInterval resolves to NodeJS.Timeout).
+  const autoTimerRef = useRef<number | undefined>(undefined);
+  const restartAuto = useCallback(() => {
+    if (autoTimerRef.current !== undefined) clearInterval(autoTimerRef.current);
+    autoTimerRef.current = window.setInterval(next, AUTO_ADVANCE_MS);
+  }, [next]);
+
+  // User-facing handlers: navigate, then reset the auto timer. The interval
+  // itself calls the raw `next`, so auto-advance keeps its own rhythm.
+  const handlePrev = useCallback(() => {
+    prev();
+    restartAuto();
+  }, [prev, restartAuto]);
+  const handleNext = useCallback(() => {
+    next();
+    restartAuto();
+  }, [next, restartAuto]);
+  const handleGoTo = useCallback(
+    (index: number) => {
+      goTo(index);
+      restartAuto();
+    },
+    [goTo, restartAuto],
+  );
+
   // After landing on a clone via animation (typically auto-advance), schedule
   // a silent snap-back once the transition completes.
   useEffect(() => {
@@ -144,9 +173,11 @@ export default function ImageCarousel() {
   useEffect(() => () => cancelPendingChain(), [cancelPendingChain]);
 
   useEffect(() => {
-    const id = setInterval(next, AUTO_ADVANCE_MS);
-    return () => clearInterval(id);
-  }, [next]);
+    restartAuto();
+    return () => {
+      if (autoTimerRef.current !== undefined) clearInterval(autoTimerRef.current);
+    };
+  }, [restartAuto]);
 
   return (
     <div className="relative mx-auto max-w-xl sm:max-w-2xl">
@@ -171,7 +202,7 @@ export default function ImageCarousel() {
 
         {/* Navigation arrows */}
         <button
-          onClick={prev}
+          onClick={handlePrev}
           aria-label="Previous"
           className="absolute left-3 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-secondary/80 backdrop-blur-sm text-text-muted transition-all duration-300 hover:border-white/20 hover:text-primary"
         >
@@ -189,7 +220,7 @@ export default function ImageCarousel() {
           </svg>
         </button>
         <button
-          onClick={next}
+          onClick={handleNext}
           aria-label="Next"
           className="absolute right-3 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-secondary/80 backdrop-blur-sm text-text-muted transition-all duration-300 hover:border-white/20 hover:text-primary"
         >
@@ -213,7 +244,7 @@ export default function ImageCarousel() {
         {images.map((_, i) => (
           <button
             key={i}
-            onClick={() => goTo(i)}
+            onClick={() => handleGoTo(i)}
             aria-label={`Go to photo ${i + 1}`}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               i === realIndex
