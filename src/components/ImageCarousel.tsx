@@ -7,6 +7,7 @@ const images = [
   "/experience/photo-1.jpeg",
   "/experience/photo-2.jpeg",
   "/experience/photo-3.jpeg",
+  "/experience/sea-openai-hackathon.jpeg",
   "/experience/lumcloon-energy-leu-1.png",
   "/experience/lumcloon-energy-leu-2.png",
 ];
