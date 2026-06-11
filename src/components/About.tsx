@@ -44,7 +44,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
-            className="w-full lg:w-[320px] shrink-0"
+            className="w-full max-w-[280px] mx-auto sm:max-w-[320px] lg:mx-0 lg:w-[320px] shrink-0"
           >
             <div className="relative aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[320px] overflow-hidden rounded-2xl border border-white/[0.06]">
               <Image
