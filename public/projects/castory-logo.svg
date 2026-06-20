@@ -1,19 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="3 0 48 48">
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Castory logo</title>
+  <desc id="desc">A podcast microphone with orbiting story waves.</desc>
   <defs>
-    <linearGradient id="ca" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="ca" x1="18" y1="12" x2="78" y2="84" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="55%" stop-color="#f59e0b"/>
       <stop offset="100%" stop-color="#fbbf24"/>
     </linearGradient>
   </defs>
-  <!-- Microphone body -->
-  <rect x="17" y="4" width="14" height="22" rx="7" fill="url(#ca)"/>
-  <!-- Mic cradle arc -->
-  <path d="M12 22 Q12 36 24 36 Q36 36 36 22" stroke="url(#ca)" stroke-width="3" stroke-linecap="round" fill="none"/>
-  <!-- Mic stand -->
-  <line x1="24" y1="36" x2="24" y2="42" stroke="url(#ca)" stroke-width="3" stroke-linecap="round"/>
-  <!-- Stand base -->
-  <line x1="17" y1="42" x2="31" y2="42" stroke="url(#ca)" stroke-width="3" stroke-linecap="round"/>
-  <!-- Sound wave arcs -->
-  <path d="M38 10 Q44 18 38 26" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-  <path d="M42 7 Q50 18 42 29" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <rect width="96" height="96" rx="22" fill="#050505"/>
+  <rect x="36" y="17" width="24" height="40" rx="12" fill="none" stroke="url(#ca)" stroke-width="6"/>
+  <path d="M25 47c0 14 9 24 23 24s23-10 23-24" fill="none" stroke="url(#ca)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M48 71v10M36 81h24" stroke="#f5f5f5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M20 34c-5 7-5 21 0 28M76 34c5 7 5 21 0 28" fill="none" stroke="url(#ca)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+  <path d="M28 27c-4 5-4 14 0 19M68 27c4 5 4 14 0 19" fill="none" stroke="#f5f5f5" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
 </svg>

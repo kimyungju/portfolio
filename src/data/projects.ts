@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "60's Pulse",
     badge: "Hackathon Winner",
     description:
-      "A hackathon-winning campaign premortem dashboard that pressure-tests launches with 60 AI critics before the public gets to them.",
+      "Agent Forge Hackathon Winner: an AI premortem dashboard for pressure-testing product and campaign launches with 60 AI critics before they reach the public.",
     longDescription:
       "Built at Agent Forge AI Hackathon 2026, 60's Pulse turns campaign copy, keynotes, images, or videos into a launch-risk war room: Blast Score, 60-agent reactions, objection clusters, blast maps, stakeholder verdicts, and the cheapest fix path.",
     techStack: ["Python", "FastAPI", "Kimi", "Bright Data", "Daytona", "VideoDB"],
