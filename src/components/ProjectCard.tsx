@@ -4,12 +4,13 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "@/data/projects";
+import type { Project } from "@/data/projects";
 import { techBrandColors, defaultBadgeColors } from "@/data/techBrandColors";
 import { HiOutlineExternalLink, HiOutlineDocumentText } from "react-icons/hi";
 import RevealText from "@/components/ui/RevealText";
 
 const screenRatios: Record<string, string> = {
+  "60s-pulse": "1600/1080",
   castory: "2845/1412",
   pricewise: "2874/1448",
   interviewpilot: "1920/985",
@@ -90,6 +91,12 @@ export default function ProjectCard({
             }}
             className="flex flex-1 flex-col justify-center gap-7 lg:max-w-[50%]"
           >
+            {project.badge && (
+              <div className="w-fit rounded-full border border-cyan/35 bg-cyan/[0.08] px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-cyan md:px-4 md:py-1.5 md:text-xs">
+                {project.badge}
+              </div>
+            )}
+
             {/* Logo + Title */}
             <div className="flex items-center gap-5">
               <div className="relative h-16 w-16 lg:h-20 lg:w-20 shrink-0 overflow-hidden rounded-xl border border-white/[0.08] bg-card-bg">

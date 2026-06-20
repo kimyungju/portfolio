@@ -14,6 +14,7 @@ This portfolio feels like a dark technical gallery: cinematic enough to make shi
 | Surface/base | `--color-secondary` | `#050505` | Page background |
 | Accent/primary | `--color-accent` | `#6d9fff` | General accent glow and focus moments |
 | Accent/warm | `--color-accent-warm` | `#f59e0b` | Limited warm contrast |
+| Accent/alert | `--color-accent-alert` | `#ff3355` | High-risk project accents and winner callouts |
 | Surface/card | `--color-card-bg` | `#0c0c0c` | Media frames and card interiors |
 | Border/card | `--color-card-border` | `#1a1a1a` | Default dark card outlines |
 | Surface/badge | `--color-badge-bg` | `#141414` | Badge backgrounds and inline code |

@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   longDescription: string;
   techStack: string[];
+  badge?: string;
   liveUrl?: string;
   githubUrl?: string;
   mobileSrc?: string;
@@ -18,8 +19,27 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "interviewpilot",
+    slug: "60s-pulse",
     number: "//1",
+    title: "60's Pulse",
+    badge: "Hackathon Winner",
+    description:
+      "A hackathon-winning campaign premortem dashboard that pressure-tests launches with 60 AI critics before the public gets to them.",
+    longDescription:
+      "Built at Agent Forge AI Hackathon 2026, 60's Pulse turns campaign copy, keynotes, images, or videos into a launch-risk war room: Blast Score, 60-agent reactions, objection clusters, blast maps, stakeholder verdicts, and the cheapest fix path.",
+    techStack: ["Python", "FastAPI", "Kimi", "Bright Data", "Daytona", "VideoDB"],
+    liveUrl: "https://60s-pulse-production.up.railway.app",
+    githubUrl: "https://github.com/kimyungju/AI-Forge-Hackathon",
+    logoSrc: "/projects/60s-pulse-logo.svg",
+    previewSrc: "/projects/60s-pulse-preview.png",
+    readTime: "4 min read",
+    publishDate: "20 June 2026",
+    overlayColor: "#ff3355",
+    letterImages: ["/projects/60s-pulse-preview.png"],
+  },
+  {
+    slug: "interviewpilot",
+    number: "//2",
     title: "InterviewPilot",
     description:
       "A full-stack mock interview platform that generates role-tailored questions, conducts speech-based interviews with webcam recording, and delivers AI-scored feedback.",
@@ -44,7 +64,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pricewise",
-    number: "//2",
+    number: "//3",
     title: "PriceWise",
     description:
       "An autonomous AI shopping agent that compares prices and reviews across retailers, delivering structured receipts via a conversational interface with selective human-in-the-loop approval.",
@@ -69,7 +89,7 @@ export const projects: Project[] = [
   },
   {
     slug: "castory",
-    number: "//3",
+    number: "//4",
     title: "Castory",
     description:
       "A full-stack SaaS platform enabling users to generate AI-narrated podcasts from trending news via a 5-step guided workflow using OpenAI.",
@@ -94,7 +114,7 @@ export const projects: Project[] = [
   },
   {
     slug: "devg-website",
-    number: "//4",
+    number: "//5",
     title: "DG Website",
     description:
       "The official website for Developer Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",

@@ -1,14 +1,17 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { HiOutlineClock } from "react-icons/hi";
+import type { ComponentType } from "react";
 import { projects } from "@/data/projects";
 import StorySidebar from "@/components/StorySidebar";
 import PricewiseStory from "@/components/stories/PricewiseStory";
 import InterviewpilotStory from "@/components/stories/InterviewpilotStory";
 import CastoryStory from "@/components/stories/CastoryStory";
 import DevgStory from "@/components/stories/DevgStory";
+import SixtyPulseStory from "@/components/stories/SixtyPulseStory";
 
-const storyComponents: Record<string, React.ComponentType> = {
+const storyComponents: Record<string, ComponentType> = {
+  "60s-pulse": SixtyPulseStory,
   pricewise: PricewiseStory,
   interviewpilot: InterviewpilotStory,
   castory: CastoryStory,
