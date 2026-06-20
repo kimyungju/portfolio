@@ -4,12 +4,38 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 const images = [
-  "/experience/photo-1.jpeg",
-  "/experience/photo-2.jpeg",
-  "/experience/photo-3.jpeg",
-  "/experience/sea-openai-hackathon.jpeg",
-  "/experience/lumcloon-energy-leu-1.png",
-  "/experience/lumcloon-energy-leu-2.png",
+  {
+    src: "/experience/photo-1.jpeg",
+    alt: "Experience photo from a university event",
+  },
+  {
+    src: "/experience/photo-2.jpeg",
+    alt: "Experience photo from a team session",
+  },
+  {
+    src: "/experience/photo-3.jpeg",
+    alt: "Experience photo from a presentation",
+  },
+  {
+    src: "/experience/sea-openai-hackathon.jpeg",
+    alt: "SEA OpenAI hackathon team photo",
+  },
+  {
+    src: "/experience/agent-forge-hackathon-win.jpg",
+    alt: "Agent Forge Hackathon first-place team photo",
+  },
+  {
+    src: "/experience/agent-forge-hackathon-pitch.jpg",
+    alt: "Agent Forge Hackathon pitch presentation",
+  },
+  {
+    src: "/experience/lumcloon-energy-leu-1.png",
+    alt: "Lumcloon Energy site visit photo",
+  },
+  {
+    src: "/experience/lumcloon-energy-leu-2.png",
+    alt: "Lumcloon Energy facility photo",
+  },
 ];
 
 const AUTO_ADVANCE_MS = 4000;
@@ -187,11 +213,14 @@ export default function ImageCarousel() {
           className={`flex ${transitionEnabled ? "transition-transform duration-700 ease-[cubic-bezier(0.25,0.1,0,1)]" : ""}`}
           style={{ transform: `translateX(-${slide * 100}%)` }}
         >
-          {slides.map((src, i) => (
-            <div key={i} className="relative w-full shrink-0 aspect-[4/5] bg-black">
+          {slides.map((image, i) => (
+            <div
+              key={`${image.src}-${i}`}
+              className="relative w-full shrink-0 aspect-[4/5] bg-black"
+            >
               <Image
-                src={src}
-                alt={`Experience photo ${i}`}
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="(max-width: 640px) 100vw, 672px"
                 className="object-contain"
