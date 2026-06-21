@@ -102,6 +102,14 @@ All spacing derives from 4px. Tailwind spacing tokens should stay on that rhythm
 - Motion: Framer Motion reveal and transform-only hover effects.
 - Tech stack badges use icon-led large glass pills, thin brand-color edge glow, and a responsive 2-to-3-column grid without a visible section label.
 
+### Project Story Page
+
+- Structure: case-study hero with project title, summary, CTAs, preview media, metric cards, sticky read map, and a constrained narrative column.
+- Spacing: first viewport uses `px-4 md:px-8 lg:px-12`, large hero gutters, and 40px-64px gaps between story blocks.
+- Typography: title uses the display scale; body copy stays near 60-66 characters per line with generous leading.
+- Surfaces: use low-opacity glass panels and thin alpha borders; do not place long prose inside heavy nested cards.
+- Readability: every story starts with a scannable brief and metrics before the long narrative.
+
 ### Tech Stack Strip
 
 - Structure: a masked horizontal marquee with repeated equal-width content sets.

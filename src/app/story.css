@@ -1,0 +1,110 @@
+.case-study-prose {
+  counter-reset: story-section;
+  max-width: 68rem;
+}
+
+.case-study-prose h2 {
+  counter-increment: story-section;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  max-width: 16em;
+  margin-top: 4.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: var(--color-primary);
+  text-wrap: balance;
+}
+
+.case-study-prose h2:first-child {
+  margin-top: 0;
+}
+
+.case-study-prose h2::before {
+  content: counter(story-section, decimal-leading-zero);
+  margin-top: 0.25rem;
+  font-family: var(--font-geist-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--color-cyan);
+}
+
+.case-study-prose h3 {
+  max-width: 38rem;
+  margin-top: 2.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0;
+  color: var(--color-primary);
+}
+
+.case-study-prose p {
+  max-width: 66ch;
+  margin-top: 1.15rem;
+  font-size: 1.06rem;
+  line-height: 1.85;
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+.case-study-prose h2 + p,
+.case-study-prose h3 + p {
+  margin-top: 1.35rem;
+}
+
+.case-study-prose strong {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.case-study-prose em {
+  color: var(--color-text-secondary);
+}
+
+.case-study-prose ul,
+.case-study-prose ol {
+  display: grid;
+  max-width: 66ch;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-prose li {
+  border-left: 2px solid rgba(34, 211, 238, 0.45);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.85rem 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.case-study-prose code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--color-badge-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.35rem;
+  color: rgba(245, 245, 245, 0.9);
+}
+
+.case-study-prose a {
+  color: var(--color-cyan);
+  text-decoration: underline;
+  text-decoration-color: rgba(34, 211, 238, 0.32);
+  text-underline-offset: 3px;
+}
+
+.case-study-prose a:hover {
+  text-decoration-color: var(--color-cyan);
+}
