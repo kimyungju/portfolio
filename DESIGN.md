@@ -100,6 +100,13 @@ All spacing derives from 4px. Tailwind spacing tokens should stay on that rhythm
 - Spacing: large cards use generous `p-6 md:p-10 lg:p-14` with `gap-8 lg:gap-14`.
 - States: hover raises media and strengthens the border/spotlight treatment.
 - Motion: Framer Motion reveal and transform-only hover effects.
+- Tech stack badges use icon-led large glass pills, thin brand-color edge glow, and a responsive 2-to-3-column grid without a visible section label.
+
+### Tech Stack Strip
+
+- Structure: a masked horizontal marquee with repeated equal-width content sets.
+- Motion: the track uses `max-content` width and transform-only movement so the reset point lands exactly one repeated set later.
+- Accessibility: duplicated visual sets are hidden from assistive technology.
 
 ## 6. Motion & Interaction
 

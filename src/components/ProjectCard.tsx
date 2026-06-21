@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
-import { techBrandColors, defaultBadgeColors } from "@/data/techBrandColors";
 import { HiOutlineExternalLink, HiOutlineDocumentText } from "react-icons/hi";
 import RevealText from "@/components/ui/RevealText";
+import { ProjectTechStack } from "@/components/ProjectTechStack";
 
 const screenRatios: Record<string, string> = {
   "60s-pulse": "1600/1080",
@@ -122,26 +122,7 @@ export default function ProjectCard({
             </p>
 
             {/* Tech badges */}
-            <div className="flex flex-wrap gap-2.5">
-              {project.techStack.map((tech) => {
-                const colors = techBrandColors[tech] ?? defaultBadgeColors;
-                return (
-                  <span
-                    key={tech}
-                    className="rounded-full px-3 py-1 text-xs md:px-6 md:py-2.5 md:text-lg font-medium tracking-wide transition-all duration-200 hover:brightness-125"
-                    style={{
-                      borderWidth: "2px",
-                      borderStyle: "solid",
-                      borderColor: colors.border,
-                      color: colors.text,
-                      backgroundColor: colors.bg,
-                    }}
-                  >
-                    {tech}
-                  </span>
-                );
-              })}
-            </div>
+            <ProjectTechStack techStack={project.techStack} />
 
             {/* Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
