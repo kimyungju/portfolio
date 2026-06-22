@@ -1,10 +1,10 @@
-const sharp = require("sharp");
-const path = require("path");
-
 const WIDTH = 1200;
 const HEIGHT = 630;
 
 async function generateOGImage() {
+  const sharp = (await import("sharp")).default;
+  const path = await import("node:path");
+
   const projectsDir = path.join(__dirname, "..", "public", "projects");
   const outputPath = path.join(
     __dirname,
@@ -68,7 +68,7 @@ async function generateOGImage() {
   const previews = [
     "interviewpilot-preview.png",
     "pricewise-preview.png",
-    "castory-preview.png",
+    "colonial-archives-preview.png",
   ];
 
   const roundedMask = Buffer.from(

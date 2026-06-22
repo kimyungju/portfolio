@@ -11,7 +11,7 @@ import { ProjectTechStack } from "@/components/ProjectTechStack";
 
 const screenRatios: Record<string, string> = {
   "60s-pulse": "1600/1080",
-  castory: "2845/1412",
+  "colonial-archives": "2861/1456",
   pricewise: "2874/1448",
   interviewpilot: "1920/985",
   "devg-website": "1920/983",

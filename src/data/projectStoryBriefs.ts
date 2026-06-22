@@ -68,23 +68,23 @@ export const projectStoryBriefs: Record<string, ProjectStoryBrief> = {
       "Recommendation output",
     ],
   },
-  castory: {
-    eyebrow: "AI audio publishing",
+  "colonial-archives": {
+    eyebrow: "Digital humanities Graph-RAG",
     focus:
-      "A podcast creation platform with manual scripts, an automated news wizard, TTS generation, cover art, and publishing.",
+      "A research interface that turns scanned CO 273 archive PDFs into source-grounded answers, graph exploration, and exact page-level citations.",
     outcome:
-      "Turns daily reading into a short listenable episode while solving the awkward production edges around TTS limits and drafts.",
+      "Makes messy colonial records searchable without letting the AI drift away from the documents it can prove.",
     metrics: [
-      { label: "flow", value: "5-step wizard" },
-      { label: "limit", value: "4,096-char chunks" },
-      { label: "state", value: "debounced drafts" },
+      { label: "corpus", value: "28 PDFs" },
+      { label: "graph", value: "1,463 entities" },
+      { label: "links", value: "6,843 relationships" },
     ],
     readMap: [
-      "Podcast creation goal",
-      "Manual and automated workflows",
-      "TTS chunking",
-      "Draft persistence",
-      "Publishing roadmap",
+      "Archive access problem",
+      "Nine-step ingestion pipeline",
+      "Hybrid vector and graph retrieval",
+      "Citation and PDF verification loop",
+      "Graph visualization at scale",
     ],
   },
   "devg-website": {

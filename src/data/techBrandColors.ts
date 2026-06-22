@@ -27,6 +27,7 @@ export const techBrandColors: Record<string, { border: string; text: string; bg:
   "Flask":        { border: "#ffffff", text: "#ffffff", bg: "rgba(255,255,255,0.08)" },
   "Firebase":     { border: "#ffca28", text: "#ffca28", bg: "rgba(255,202,40,0.08)" },
   "Vertex AI":    { border: "#4285f4", text: "#4285f4", bg: "rgba(66,133,244,0.08)" },
+  "Neo4j":        { border: "#008cc1", text: "#6bd5ff", bg: "rgba(0,140,193,0.08)" },
 };
 
 export const defaultBadgeColors = { border: "#8ab4ff", text: "#8ab4ff", bg: "rgba(138,180,255,0.08)" };

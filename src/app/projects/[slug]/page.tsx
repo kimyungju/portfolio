@@ -5,7 +5,7 @@ import StorySidebar from "@/components/StorySidebar";
 import ProjectStoryShell from "@/components/ProjectStoryShell";
 import PricewiseStory from "@/components/stories/PricewiseStory";
 import InterviewpilotStory from "@/components/stories/InterviewpilotStory";
-import CastoryStory from "@/components/stories/CastoryStory";
+import ColonialArchivesStory from "@/components/stories/ColonialArchivesStory";
 import DevgStory from "@/components/stories/DevgStory";
 import SixtyPulseStory from "@/components/stories/SixtyPulseStory";
 
@@ -13,7 +13,7 @@ const storyComponents: Record<string, ComponentType> = {
   "60s-pulse": SixtyPulseStory,
   pricewise: PricewiseStory,
   interviewpilot: InterviewpilotStory,
-  castory: CastoryStory,
+  "colonial-archives": ColonialArchivesStory,
   "devg-website": DevgStory,
 };
 

@@ -46,7 +46,7 @@ Engineering hiring managers, technical recruiters, and senior engineers evaluati
 │  │                                             │    │
 │  │  /                    → Home (all sections)  │    │
 │  │  /projects/pricewise  → PricewiseStory      │    │
-│  │  /projects/castory    → CastoryStory        │    │
+│  │  /projects/colonial-archives → ColonialArchivesStory │
 │  │  /projects/...        → (per slug)          │    │
 │  └─────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────┘
@@ -67,7 +67,7 @@ The project detail pages use a component registry pattern to map slugs to story 
 const storyComponents: Record<string, React.ComponentType> = {
   pricewise: PricewiseStory,
   interviewpilot: InterviewpilotStory,
-  castory: CastoryStory,
+  "colonial-archives": ColonialArchivesStory,
   "devg-website": DevgStory,
 };
 
@@ -165,7 +165,7 @@ The morph applies power-law opacity (`Math.pow(fraction, 0.4)`) rather than line
 
 ### Challenge 3: Per-Project Aspect Ratios in Device Mockups
 
-**Constraint:** Each project card displays a screenshot inside a laptop mockup. Screenshots come from different applications at different resolutions — 2845x1412 for one, 1920x985 for another. Using a uniform aspect ratio either clips content or adds letterboxing.
+**Constraint:** Each project card displays a screenshot inside a laptop mockup. Screenshots come from different applications at different resolutions — 2861x1456 for one, 1920x985 for another. Using a uniform aspect ratio either clips content or adds letterboxing.
 
 **Why the naive approach fails:** A fixed `aspect-ratio: 16/9` distorts non-standard screenshots. Using `object-fit: cover` clips critical UI elements. Using `object-fit: contain` adds black bars that break the mockup illusion.
 
@@ -174,7 +174,7 @@ The morph applies power-law opacity (`Math.pow(fraction, 0.4)`) rather than line
 ```tsx
 // src/components/ProjectCard.tsx — per-project screen ratios
 const screenRatios: Record<string, string> = {
-  castory: "2845/1412",
+  "colonial-archives": "2861/1456",
   pricewise: "2874/1448",
   interviewpilot: "1920/985",
   "devg-website": "1920/983",

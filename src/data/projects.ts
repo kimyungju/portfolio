@@ -22,7 +22,7 @@ export const projects: Project[] = [
     slug: "60s-pulse",
     number: "//1",
     title: "60's Pulse",
-    badge: "Hackathon Winner",
+    badge: "AI Premortem Dashboard",
     description:
       "Agent Forge Hackathon Winner: an AI premortem dashboard for pressure-testing product and campaign launches with 60 AI critics before they reach the public.",
     longDescription:
@@ -41,6 +41,7 @@ export const projects: Project[] = [
     slug: "interviewpilot",
     number: "//2",
     title: "InterviewPilot",
+    badge: "AI Interview Coach",
     description:
       "A full-stack mock interview platform that generates role-tailored questions, conducts speech-based interviews with webcam recording, and delivers AI-scored feedback.",
     longDescription:
@@ -66,6 +67,7 @@ export const projects: Project[] = [
     slug: "pricewise",
     number: "//3",
     title: "PriceWise",
+    badge: "AI Shopping Agent",
     description:
       "An autonomous AI shopping agent that compares prices and reviews across retailers, delivering structured receipts via a conversational interface with selective human-in-the-loop approval.",
     longDescription:
@@ -73,7 +75,7 @@ export const projects: Project[] = [
     techStack: ["LangGraph", "FastAPI", "OpenAI", "Next.js", "PostgreSQL", "Docker"],
     liveUrl: "https://pricewise-ai-shop.vercel.app/",
     githubUrl: "https://github.com/kimyungju/pricewise",
-    logoSrc: "/projects/pricewise-logo.svg",
+    logoSrc: "/projects/pricewise-logo.png",
     previewSrc: "/projects/pricewise-preview.png",
     readTime: "5 min read",
     publishDate: "19 February 2026",
@@ -88,34 +90,32 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "castory",
+    slug: "colonial-archives",
     number: "//4",
-    title: "Castory",
+    title: "Colonial Archives",
+    badge: "Graph-RAG Research Tool",
     description:
-      "A full-stack SaaS platform enabling users to generate AI-narrated podcasts from trending news via a 5-step guided workflow using OpenAI.",
+      "A source-grounded Graph-RAG research tool for colonial-era archive documents, combining OCR, vector search, Neo4j graph traversal, and page-level citations.",
     longDescription:
-      "Implemented chunked TTS pipeline, persistent audio player, full-text search, draft auto-save, and dynamic user profiles with listener analytics.",
-    techStack: ["Next.js", "React", "TypeScript", "Convex", "OpenAI", "Clerk"],
-    liveUrl: "https://castory-ai.vercel.app/",
-    githubUrl: "https://github.com/kimyungju/castory",
-    logoSrc: "/projects/castory-logo.svg",
-    previewSrc: "/projects/castory-preview.png",
-    readTime: "4 min read",
-    publishDate: "19 February 2026",
-    overlayColor: "#f97316",
+      "Ingests CO 273 scanned PDFs through Document AI OCR, Vertex AI embeddings and search, Gemini entity extraction, and Neo4j MERGE to build a traceable knowledge graph for archive-first Q&A.",
+    techStack: ["Python", "FastAPI", "React", "TypeScript", "Vertex AI", "Neo4j"],
+    liveUrl: "https://colonial-archives.vercel.app/",
+    githubUrl: "https://github.com/kimyungju/colonial-archives",
+    logoSrc: "/projects/colonial-archives-logo.png",
+    previewSrc: "/projects/colonial-archives-preview.png",
+    readTime: "5 min read",
+    publishDate: "2 March 2026",
+    overlayColor: "#d4ad6a",
     letterImages: [
-      "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=200&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1487537023557-4ef09b0be3d4?w=200&h=200&fit=crop",
+      "/projects/colonial-archives-preview.png",
+      "/projects/colonial-archives-logo.png",
     ],
   },
   {
     slug: "devg-website",
     number: "//5",
     title: "DG Website",
+    badge: "Developer Community",
     description:
       "The official website for Developer Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
     longDescription:
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://dg-nus.vercel.app/#/about",
     githubUrl: "https://github.com/kimyungju/devg-website",
-    logoSrc: "/projects/devg-logo.svg",
+    logoSrc: "/projects/devg-logo.png",
     previewSrc: "/projects/devg-preview.png",
     readTime: "3 min read",
     publishDate: "19 February 2026",

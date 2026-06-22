@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
@@ -29,9 +30,9 @@ export default function StorySidebar() {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="fixed top-0 left-0 z-50 hidden h-screen w-[68px] flex-col items-center py-8 md:flex"
       >
-        <a href="/">
+        <Link href="/">
           <Image src="/logo.svg" alt="YJ" width={32} height={32} />
-        </a>
+        </Link>
 
         <div className="flex flex-1 flex-col items-center justify-center gap-12">
           {NAV_LINKS.map((link) => (
@@ -53,9 +54,9 @@ export default function StorySidebar() {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:hidden"
       >
-        <a href="/">
+        <Link href="/">
           <Image src="/logo.svg" alt="YJ" width={32} height={32} />
-        </a>
+        </Link>
 
         <button
           className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-[5px]"
