@@ -110,9 +110,10 @@ export default function PricewiseStory() {
       </p>
 
       <p>
-        Conversations are persisted via <strong>PostgreSQL</strong> using LangGraph&apos;s
-        async checkpoint backend, so sessions survive server restarts. The backend deploys
-        to <strong>Railway</strong> with a <strong>Docker</strong> image built using
+        PriceWise supports persistent conversations through LangGraph&apos;s
+        <strong> AsyncPostgresSaver</strong>, allowing a PostgreSQL-backed deployment to
+        preserve sessions across restarts. The backend deploys to <strong>Railway</strong>
+        with a <strong>Docker</strong> image built using
         <strong> uv</strong> for fast dependency installation, while the frontend deploys
         to <strong>Vercel</strong>. In production, the browser calls Railway directly for
         SSE streams, bypassing Vercel&apos;s serverless timeout entirely.
@@ -121,14 +122,15 @@ export default function PricewiseStory() {
       <h2>What It Adds Up To</h2>
 
       <p>
-        PriceWise compresses a 30-minute, multi-tab research session into a single
-        conversation. The agent handles the full pipeline &mdash; search, compare, review,
+        PriceWise compresses a multi-tab research workflow into a single conversation. The
+        agent handles the full pipeline &mdash; search, compare, review,
         calculate, recommend &mdash; while the user retains approval authority over every
         external action. The architecture is deliberately modular: adding a new tool means
         writing one function with a <strong>Pydantic</strong> schema and appending it to
-        the agent&apos;s tool list. Swapping LLM providers is a single configuration
-        change. The complexity lives in the orchestration boundaries, not in the individual
-        components, and that&apos;s exactly where I wanted it.
+        the agent&apos;s tool list. The model is initialized through LangChain&apos;s provider
+        interface, keeping a provider change localized to the agent configuration. The
+        complexity lives in the orchestration boundaries, not in the individual components,
+        and that&apos;s exactly where I wanted it.
       </p>
     </>
   );

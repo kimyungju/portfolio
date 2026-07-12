@@ -24,10 +24,10 @@ export default function ColonialArchivesStory() {
       <p>
         The backend is a <strong>FastAPI</strong> system that processes PDFs through a
         nine-step pipeline: download from Cloud Storage, OCR with <strong>Google Document
-        AI</strong>, clean and chunk the text, embed chunks with <strong>Vertex AI</strong>,
-        upsert vectors, extract entities with <strong>Gemini</strong>, normalize duplicate
-        names, merge entities and relationships into <strong>Neo4j</strong>, and classify
-        documents into archive categories.
+        AI</strong>, resolve archive categories with an auto-classification fallback, clean and
+        chunk the text, embed chunks with <strong>Vertex AI</strong>, upsert vectors, extract
+        entities with <strong>Gemini</strong>, normalize duplicate names, and merge entities and
+        relationships into <strong>Neo4j</strong>.
       </p>
 
       <p>
@@ -83,11 +83,10 @@ export default function ColonialArchivesStory() {
       </p>
 
       <p>
-        At the current scale, the system has processed 28 PDFs into 1,463 entities and
-        6,843 relationships. The product lesson was that digital humanities tools need more
-        than a good answer box. They need source visibility, uncertainty boundaries, and an
-        interface that lets researchers inspect the evidence rather than just consume a
-        summary.
+        The live deployment currently exposes 30 archive documents, 1,959 graph nodes, and
+        8,952 edges. The product lesson was that digital humanities tools need more than a good
+        answer box. They need source visibility, uncertainty boundaries, and an interface that
+        lets researchers inspect the evidence rather than just consume a summary.
       </p>
 
       <p>

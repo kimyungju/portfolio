@@ -119,10 +119,10 @@ export const projects: Project[] = [
     description:
       "The official website for Developer Group @ NUS Computing, showcasing events, initiatives, and partner collaborations for a 2,300+ follower student tech community.",
     longDescription:
-      "Designed and developed the organization website to improve visibility and outreach, supporting event promotion and community engagement.",
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "As Head of Technology, shipped responsive, content, and media improvements to the team-built organization website for events, partners, and community outreach.",
+    techStack: ["Vite", "React", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://dg-nus.vercel.app/#/about",
-    githubUrl: "https://github.com/kimyungju/devg-website",
+    githubUrl: "https://github.com/kimyungju/gdsc_nus",
     logoSrc: "/projects/devg-logo.png",
     previewSrc: "/projects/devg-preview.png",
     readTime: "3 min read",

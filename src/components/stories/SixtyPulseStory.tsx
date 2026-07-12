@@ -42,13 +42,12 @@ export default function SixtyPulseStory() {
       <h2>A Demo-Safe Sponsor Stack</h2>
 
       <p>
-        The backend is <strong>FastAPI</strong> with a static dashboard. Kimi
-        orchestrates the panel, Bright Data grounds personas in public discourse,
-        Daytona provides sandboxed execution receipts, and VideoDB parses video
-        into scenes, transcript, and creative manifest. The live path supports
-        typed campaign analysis, while the stage demo can replay a baked golden
-        run so the presentation does not depend on Wi-Fi, sponsor latency, or
-        sixty live model calls.
+        The backend is <strong>FastAPI</strong> with a static dashboard. Its optional live
+        path can use Kimi to orchestrate the panel, Bright Data to ground personas in public
+        discourse, Daytona to capture sandboxed execution receipts, and VideoDB to parse video
+        into scenes, transcript, and a creative manifest. The public demo defaults to a
+        fixture-backed golden replay, so it does not depend on Wi-Fi, sponsor latency, or sixty
+        live model calls.
       </p>
 
       <p>

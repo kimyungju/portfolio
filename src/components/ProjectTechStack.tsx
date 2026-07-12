@@ -8,6 +8,7 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiVite,
 } from "react-icons/si";
 import { HiLightningBolt, HiOutlinePlay, HiSparkles } from "react-icons/hi";
 
@@ -23,6 +24,7 @@ const iconMap: Partial<Record<string, IconType>> = {
   React: SiReact,
   "Tailwind CSS": SiTailwindcss,
   TypeScript: SiTypescript,
+  Vite: SiVite,
   FastAPI: HiLightningBolt,
   Daytona: HiSparkles,
   VideoDB: HiOutlinePlay,

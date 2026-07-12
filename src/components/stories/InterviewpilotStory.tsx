@@ -26,9 +26,10 @@ export default function InterviewpilotStory() {
       <p>
         InterviewPilot is a full-stack AI mock interview platform built with{" "}
         <strong>Next.js</strong>, <strong>React</strong>, <strong>OpenAI</strong>, and{" "}
-        <strong>Supabase</strong>. Users pick an interview type &mdash; behavioral, technical, or
-        system design &mdash; set a difficulty level, and optionally upload a resume or reference
-        material so the AI can personalize its questions. The platform reads each question aloud
+        <strong>Supabase</strong>. Users pick one of four interview types &mdash; general,
+        behavioral, technical, or system design &mdash; set a difficulty level, and optionally
+        upload a resume or reference material so the AI can personalize its questions. The
+        platform reads each question aloud
         using text-to-speech, starts a visual countdown, captures the candidate&apos;s spoken
         response via the <strong>Web Speech API</strong>, and records webcam video for every
         question. Each answer gets scored by <strong>GPT-4o-mini</strong> across four competency
@@ -55,9 +56,10 @@ export default function InterviewpilotStory() {
         immediate AI feedback and a database record ID. Second, kick off the video upload as an
         unlinked promise chain that patches the video URL column on the already-inserted row when it
         eventually resolves &mdash; no awaiting, no blocking. Third, generate the follow-up question
-        in parallel with the upload. If the upload fails, it fails silently; the answer and feedback
-        are already saved. On the review page, questions without a video URL simply don&apos;t show a
-        player, and the PDF generator only renders QR codes where a URL exists. This
+        in parallel with the upload. If the upload fails, the error is logged without aborting the
+        interview because the answer and feedback are already saved. On the review page, questions
+        without a video URL simply don&apos;t show a player, and the PDF generator only renders QR
+        codes where a URL exists. This
         fire-and-forget pattern trades strict consistency for perceived speed &mdash; the user might
         briefly see a question without its video if they navigate to the review page before uploads
         finish, but the interview itself never stalls.

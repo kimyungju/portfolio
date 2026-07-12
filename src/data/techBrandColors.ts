@@ -2,6 +2,7 @@ export const techBrandColors: Record<string, { border: string; text: string; bg:
   "Next.js":      { border: "#ffffff", text: "#ffffff", bg: "rgba(255,255,255,0.08)" },
   "React":        { border: "#61dafb", text: "#61dafb", bg: "rgba(97,218,251,0.08)" },
   "TypeScript":   { border: "#539bf5", text: "#539bf5", bg: "rgba(83,155,245,0.08)" },
+  "Vite":         { border: "#646cff", text: "#a78bfa", bg: "rgba(100,108,255,0.08)" },
   "JavaScript":   { border: "#f7df1e", text: "#f7df1e", bg: "rgba(247,223,30,0.08)" },
   "Python":       { border: "#4b96d4", text: "#4b96d4", bg: "rgba(75,150,212,0.08)" },
   "LangGraph":    { border: "#22d3ee", text: "#22d3ee", bg: "rgba(34,211,238,0.08)" },

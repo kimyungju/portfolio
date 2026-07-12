@@ -37,7 +37,7 @@ export const projectStoryBriefs: Record<string, ProjectStoryBrief> = {
     outcome:
       "Turns interview practice from a static question bank into a complete listen, evaluate, follow-up, review workflow.",
     metrics: [
-      { label: "modes", value: "3 interview types" },
+      { label: "modes", value: "4 interview types" },
       { label: "feedback", value: "4 score dimensions" },
       { label: "language", value: "English + Korean" },
     ],
@@ -75,9 +75,9 @@ export const projectStoryBriefs: Record<string, ProjectStoryBrief> = {
     outcome:
       "Makes messy colonial records searchable without letting the AI drift away from the documents it can prove.",
     metrics: [
-      { label: "corpus", value: "28 PDFs" },
-      { label: "graph", value: "1,463 entities" },
-      { label: "links", value: "6,843 relationships" },
+      { label: "corpus", value: "30 documents" },
+      { label: "graph", value: "1,959 graph nodes" },
+      { label: "links", value: "8,952 edges" },
     ],
     readMap: [
       "Archive access problem",
@@ -95,13 +95,13 @@ export const projectStoryBriefs: Record<string, ProjectStoryBrief> = {
       "Gives a 2,300+ follower student tech community a credible home beyond social posts and message threads.",
     metrics: [
       { label: "community", value: "2,300+ followers" },
-      { label: "build", value: "static site" },
+      { label: "build", value: "Vite SPA" },
       { label: "goal", value: "partner-ready" },
     ],
     readMap: [
       "Community need",
       "Design philosophy",
-      "Static stack",
+      "Vite SPA architecture",
       "Events and partners",
       "Impact",
     ],
